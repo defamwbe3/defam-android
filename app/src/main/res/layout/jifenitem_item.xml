@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dp_4"
+        android:paddingHorizontal="@dimen/dp_8"
+        android:background="@drawable/r_xian"
+        android:textColor="#373748"
+        android:textSize="@dimen/dp_12"
+        android:id="@+id/flow_text">
+
+    </TextView>
+</RelativeLayout>

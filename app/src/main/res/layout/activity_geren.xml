@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Medium.DeFam.app.common.titlebar.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:centerText="个人信息"
+        titlebar:fillStatusBar="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:orientation="horizontal"
+        android:background="@drawable/r_bai"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/dp_10">
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/dp_14"
+            android:textColor="#373748"
+            android:text="头像"/>
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/touxiang"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:riv_corner_radius="@dimen/dp_20"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="@dimen/dp_6"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@mipmap/img60"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nicheng"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:orientation="horizontal"
+        android:background="@drawable/r_bai"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/dp_10">
+        <TextView
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/dp_14"
+            android:textColor="#373748"
+            android:text="昵称"/>
+        <TextView
+            android:id="@+id/nackname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_6"
+            android:textSize="@dimen/dp_14"
+            android:textColor="#BEBEC0"/>
+        <ImageView
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:src="@mipmap/img60"/>
+    </LinearLayout>
+
+</LinearLayout>

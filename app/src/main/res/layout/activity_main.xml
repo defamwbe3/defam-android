@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <Medium.DeFam.app.common.widget.MyViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_weight="1"
+        app:canScroll="false" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/xian1">
+        <Medium.DeFam.app.common.widget.TabButtonGroup
+            android:id="@+id/tab_groups"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/mainbt_bg"
+            android:orientation="horizontal">
+
+            <Medium.DeFam.app.common.widget.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_checked="true"
+                app:tbn_icon_size="22dp"
+                app:tbn_selected_icon="@mipmap/img16"
+                app:tbn_unselected_icon="@mipmap/img17"
+                app:tbn_text_color="@color/color_E0E0E0"
+                app:tbn_text_colors="@color/texts"
+                app:tbn_text_size="@dimen/dp_11"
+                app:tbn_tip="首页"/>
+
+
+            <Medium.DeFam.app.common.widget.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="22dp"
+                app:tbn_selected_icon="@mipmap/img18"
+                app:tbn_unselected_icon="@mipmap/img19"
+                app:tbn_text_color="@color/color_E0E0E0"
+                app:tbn_text_colors="@color/texts"
+                app:tbn_text_size="@dimen/dp_11"
+                app:tbn_tip="资讯"/>
+
+            <Medium.DeFam.app.common.widget.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="22dp"
+                app:tbn_selected_icon="@mipmap/img20"
+                app:tbn_unselected_icon="@mipmap/img21"
+                app:tbn_text_color="@color/color_E0E0E0"
+                app:tbn_text_colors="@color/texts"
+                app:tbn_text_size="@dimen/dp_11"
+                app:tbn_tip="圈子"/>
+
+            <Medium.DeFam.app.common.widget.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="22dp"
+                app:tbn_selected_icon="@mipmap/img22"
+                app:tbn_unselected_icon="@mipmap/img23"
+                app:tbn_text_color="@color/color_E0E0E0"
+                app:tbn_text_colors="@color/texts"
+                app:tbn_text_size="@dimen/dp_11"
+                app:tbn_tip="活动"/>
+
+            <Medium.DeFam.app.common.widget.TabButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:tbn_icon_size="22dp"
+                app:tbn_selected_icon="@mipmap/img24"
+                app:tbn_unselected_icon="@mipmap/img25"
+                app:tbn_text_color="@color/color_E0E0E0"
+                app:tbn_text_colors="@color/texts"
+                app:tbn_text_size="@dimen/dp_11"
+                app:tbn_tip="我的"/>
+
+        </Medium.DeFam.app.common.widget.TabButtonGroup>
+    </RelativeLayout>
+
+</LinearLayout>

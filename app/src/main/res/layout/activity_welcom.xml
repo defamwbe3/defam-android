@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_36"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:elevation="1dp"
+        android:text="立即体验"
+        android:textColor="#1B1BDD"
+        android:background="@drawable/r_shenlanxian"
+        android:visibility="gone"
+        android:textSize="@dimen/dp_14" />
+
+    <RelativeLayout
+        android:id="@+id/indicatorRelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_30">
+
+        <!-- 指示器布局 -->
+        <LinearLayout
+            android:id="@+id/ll_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <!-- 浮在指示器上的图片 -->
+        <ImageView
+            android:id="@+id/iv_indicator_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img74" />
+    </RelativeLayout>
+
+</RelativeLayout>

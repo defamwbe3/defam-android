@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="Medium.DeFam.app.common">
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true" >
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="Medium.DeFam.app.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <!--计时服务-->
+
+        <service
+            android:name="Medium.DeFam.app.common.timeset.PollingService"
+            android:exported="false"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="com.myservice" />
+            </intent-filter>
+        </service>
+        <receiver android:name="Medium.DeFam.app.common.timeset.BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.destroy" /><!--//这个就是自定义的action-->
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="360" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="640" />
+
+    </application>
+
+</manifest>

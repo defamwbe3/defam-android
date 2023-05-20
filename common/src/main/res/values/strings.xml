@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">common</string>
+    <string name="titlebar_search_hint">Search</string>
+    <string name="refresh_header_pulling">下拉可以刷新</string>
+    <string name="refresh_header_refreshing">正在刷新</string>
+    <string name="refresh_header_loading">正在加载</string>
+    <string name="refresh_header_release">释放立即刷新</string>
+    <string name="refresh_header_finish">刷新完成</string>
+    <string name="refresh_header_failed">刷新失败</string>
+    <string name="refresh_header_update">上次更新 M-d HH:mm</string>
+
+    <string name="refresh_footer_pulling">上拉加载更多</string>
+    <string name="refresh_footer_release">释放立即加载</string>
+    <string name="refresh_footer_loading">正在加载</string>
+    <string name="refresh_footer_refreshing">正在刷新</string>
+    <string name="refresh_footer_finish">加载完成</string>
+    <string name="refresh_footer_failed">加载失败</string>
+    <string name="refresh_footer_nothing">没有更多数据了</string>
+
+    <string name="load_failure">网络请求失败</string>
+    <string name="load_failure_2">请检查网络连接后重试~</string>
+    <string name="loading">加载中</string>
+    <string name="no_more_data">没有更多数据</string>
+    <string name="no_data">暂无数据</string>
+
+    <string name="permission_denied_alert">权限未开启，无法使用相关功能！现在是否去设置?</string>
+    <string name="permission_denied_alert_ok">是</string>
+    <string name="permission_denied_alert_cancel">取消</string>
+
+    <string name="com_quxiaogengxin">取消更新</string>
+    <string name="com_mashanggengxin">马上更新</string>
+    <string name="com_yixiazai">已下载</string>
+    <string name="com_faxianxinbanben">发现新版本</string>
+    <string name="queding">确定</string>
+    <string name="wuxinbanben">无更新版本</string>
+    <string name="qingzhigengxin">此版本为强制更新</string>
+    <string name="wangluoshifouxiazai">您在目前的网络环境下继续下载将可能会消耗手机流量，请确认是否继续下载？</string>
+    <string name="xiazaigengxin">请下载更新！</string>
+    <string name="dengluguoqi">登录过期请重新登录</string>
+    <string name="jihuodangqian">请先激活当前账户</string>
+</resources>

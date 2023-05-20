@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <Medium.DeFam.app.common.titlebar.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:fillStatusBar="true"
+        titlebar:rightCustomView="@layout/btview"
+        titlebar:showBottomLine="true" />
+    <EditText
+        android:id="@+id/yijian"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_160"
+        android:textSize="@dimen/dp_14"
+        android:textColor="@color/texts"
+        android:hint="说点什么好呢~快来发表你的观点"
+        android:textColorHint="#BEBEC0"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:padding="@dimen/dp_12"
+        android:maxLength="100"
+        android:background="@android:color/transparent"/>
+
+    <Medium.DeFam.app.common.widget.NoScrollGridView
+        android:id="@+id/gridviewimg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/dp_5"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:layout_margin="@dimen/dp_12"
+        android:verticalSpacing="@dimen/dp_5">
+
+    </Medium.DeFam.app.common.widget.NoScrollGridView>
+</LinearLayout>

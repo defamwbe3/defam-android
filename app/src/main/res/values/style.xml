@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="dialogAnim">
+        <item name="android:windowEnterAnimation">@anim/fragment_open</item>
+        <item name="android:windowExitAnimation">@anim/fragment_close</item>
+    </style>
+    <style name="dialog_gift" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="BottomToTopAnim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/bottomview_anim_enter</item>
+        <item name="android:windowExitAnimation">@anim/bottomview_anim_exit</item>
+        <!--<item name="android:windowExitAnimation">@anim/bottomview_anim_enter</item>-->
+    </style>
+    <style name="dialog_no_background" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="BottomViewTheme_Transparent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="animationofactivity" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@style/enterandentrance</item>
+    </style>
+    <style name="enterandentrance">
+        <item name="android:activityOpenEnterAnimation">@anim/fragment_open</item>
+        <item name="android:activityOpenExitAnimation">@anim/fragment_close</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fragment_open</item>
+        <item name="android:activityCloseExitAnimation">@anim/fragment_close</item>
+    </style>
+</resources>

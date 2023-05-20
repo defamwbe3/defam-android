@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="354dp"
+        android:background="@drawable/r_bai"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_18"
+            android:text="温馨提示"
+            android:textColor="#222222"
+            android:textSize="@dimen/dp_16" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            android:layout_marginVertical="@dimen/dp_14"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#373748"
+                android:textSize="@dimen/dp_14" />
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/quxiao"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginHorizontal="@dimen/dp_24"
+            android:layout_marginBottom="@dimen/dp_18"
+            android:background="@drawable/r_lan40"
+            android:text="我知道了"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16" />
+
+
+    </LinearLayout>
+</RelativeLayout>

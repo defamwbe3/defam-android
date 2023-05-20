@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="400dp"
+        android:background="@drawable/r_bai"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="欢迎使用DeFam"
+            android:textColor="@color/texts"
+            android:textSize="16dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:text="感谢您信任并使用DeFam APP及相关服务。我们非常重视您的个人信息和隐私保护为了更好地保障您的个人权益，根据有关的法律法规、政策要求及业务实际情况，我们制定了《隐私政策》，您可以通过《隐私政策》详细了解我们如何收集、使用、保护您的个人信息。
+在您继续使用DeFam APP及相关服务之前请务必谨慎阅读《用户协议》《隐私政策》各项条款，尤其是:
+我们对您的个人信息的收集/保存/使用/保护等规则条款，以及您的用户权利等条款；"
+                        android:textColor="#222222"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="约定我们的限制责任、免责条款；其他以颜色、下划线或加粗进行标识的重要条款。"
+                        android:textColor="#222222"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="如您对以上协议有任何疑问，可通过(关于我们-服务协议)联系客服。您点击“同意并继续”的行为即表示您已经阅读完毕并同意以上协议的全部内容。"
+                        android:textColor="#222222"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="《隐私政策》查看路径: DeFam APP-关于我们-隐私协议"
+                        android:textColor="#222222"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="@dimen/dp_6"
+                        android:text="如您同意以上协议内容，请点击“同意“开始使用我们的产品和服务"
+                        android:textColor="#222222"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/btbg" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/gouxuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_12"
+            android:textColor="#222222"
+            android:textSize="@dimen/dp_12" />
+
+
+        <LinearLayout
+            android:id="@+id/butongyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不同意"
+                android:textColor="@color/textxiao"
+                android:textSize="@dimen/dp_11" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:src="@mipmap/rr" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_14"
+            android:background="@drawable/r_lan6"
+            android:text="同意并继续"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

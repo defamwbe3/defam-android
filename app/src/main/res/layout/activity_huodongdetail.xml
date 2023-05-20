@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <Medium.DeFam.app.common.titlebar.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:centerText="活动详情"
+        titlebar:fillStatusBar="true"
+        titlebar:showBottomLine="true" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srlEnablePreviewInEditMode="false">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:background="@color/bg"
+                    app:banner_indicator_normal_color="@color/color_C8CAF0"
+                    app:banner_indicator_selected_color="@color/color_1B1BDD"
+                    app:banner_indicator_normal_width="6dp"
+                    app:banner_indicator_selected_width="6dp"
+                    app:banner_auto_loop="true"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:gravity="center_vertical">
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_17"/>
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_12"
+                        android:layout_height="wrap_content"
+                        android:textColor="#1B1BDD"
+                        android:textSize="@dimen/dp_14"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_10"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:gravity="center_vertical">
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#65789D"
+                        android:textSize="@dimen/dp_12"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#65789D"
+                        android:textSize="@dimen/dp_12"
+                        android:layout_marginLeft="@dimen/dp_18"
+                        android:text="独特奖励："/>
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/special"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#4B60FE"
+                        android:textSize="@dimen/dp_12"/>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/baoming"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:layout_marginTop="@dimen/dp_26"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:gravity="center"
+                    android:textSize="@dimen/dp_16"
+                    android:textColor="#666666"
+                    android:background="@drawable/r_baoming"
+                    android:text="报名"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@color/bg"/>
+                
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:paddingHorizontal="@dimen/dp_12">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开始时间"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_14"
+                        android:layout_centerVertical="true"/>
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/dp_14"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dp_12">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="报名人数"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_14"/>
+                    <TextView
+                        android:id="@+id/registered_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_14"/>
+                    <TextView
+                        android:id="@+id/number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/0人"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/dp_14"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/faqiren"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dp_12">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="发起人"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_14"/>
+
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/dp_14"/>
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:src="@mipmap/rr"/>
+                    
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/bg"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dp_12"
+                    android:textSize="@dimen/dp_16"
+                    android:textColor="#373748"
+                    android:text="活动详情"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/xian"/>
+                <WebView
+                    android:id="@+id/web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_8"
+                    android:scrollbars="none"></WebView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/bg"/>
+                <LinearLayout
+                    android:id="@+id/commentsview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:paddingHorizontal="@dimen/dp_12">
+
+                    <TextView
+                        android:id="@+id/comments"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="评论"
+                        android:textColor="#373748"
+                        android:textSize="@dimen/dp_18" />
+
+                    <TextView
+                        android:id="@+id/good"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点赞"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/dp_12" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="8dp"
+                        android:layout_marginHorizontal="@dimen/dp_8"
+                        android:background="@color/xian" />
+
+                    <TextView
+                        android:id="@+id/forward"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="转发"
+                        android:textColor="#666666"
+                        android:textSize="@dimen/dp_12" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <include
+                    android:id="@+id/not"
+                    layout="@layout/notview" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/xian" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_12">
+
+        <LinearLayout
+            android:id="@+id/pinglun"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_32"
+            android:layout_weight="1"
+            android:background="@drawable/r_shuru"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp_10">
+
+            <ImageView
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:src="@mipmap/img27" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:text="写评论~"
+                android:textColor="#666666"
+                android:textSize="@dimen/dp_13" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/pinglunimg"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/img28" />
+
+        <ImageView
+            android:id="@+id/is_good"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/img29" />
+
+        <ImageView
+            android:id="@+id/is_collection"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/img31" />
+
+        <ImageView
+            android:id="@+id/fenxiang"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:src="@mipmap/img32" />
+    </LinearLayout>
+
+
+</LinearLayout>

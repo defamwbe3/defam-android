@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/r_bai"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:textColor="@color/texts"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            android:text="需同意隐私政策才能体验DeFam App的完整功能"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:textColor="#222222"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="为了保证您正常、安全的使用DeFam App，您需要阅读并同意我们的用户服务协议和隐私政策。如不同意，我们将无法提供服务。"
+            android:layout_marginHorizontal="12dp"/>
+
+        <LinearLayout
+            android:id="@+id/butongyi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dp_11"
+                android:textColor="@color/textxiao"
+                android:text="退出应用"/>
+            <ImageView
+                android:layout_width="@dimen/dp_10"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:src="@mipmap/rr"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/yes"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_38"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@drawable/r_lan6"
+            android:text="同意并继续"
+            android:textSize="15dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

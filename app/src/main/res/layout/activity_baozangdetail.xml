@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <Medium.DeFam.app.common.titlebar.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:centerText="详情"
+        titlebar:fillStatusBar="true"/>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="375dp"
+                    android:background="@color/bg"
+                    app:banner_indicator_normal_color="@color/color_C8CAF0"
+                    app:banner_indicator_selected_color="@color/color_1B1BDD"
+                    app:banner_indicator_normal_width="6dp"
+                    app:banner_indicator_selected_width="6dp"
+                    app:banner_auto_loop="true"/>
+                <Medium.DeFam.app.view.MyTextView
+                    android:id="@+id/map_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#373748"
+                    android:textSize="@dimen/dp_17"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_12"/>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:gravity="center_vertical">
+                    <Medium.DeFam.app.view.MyTextView
+                        android:id="@+id/lian"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/dp_12"
+                        android:tag=""/>
+                    <ImageView
+                        android:id="@+id/fuzhi"
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_16"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:src="@mipmap/img67"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/huizhiview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginHorizontal="@dimen/dp_12">
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/dp_20">
+
+                        <TextView
+                            android:id="@+id/huizhi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp_18"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/dp_28"
+                            android:textSize="@dimen/dp_11"
+                            android:lines="1"
+                            android:ellipsize="end"
+                            android:text="hppts://dahjn23456c..."
+                            android:textColor="#1B1BDD"
+                            android:paddingRight="@dimen/dp_8"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/r_qianlan1"/>
+                        <ImageView
+                            android:layout_width="@dimen/dp_20"
+                            android:layout_height="@dimen/dp_20"
+                            android:src="@mipmap/img82"/>
+                    </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/fuzhi1"
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_16"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:src="@mipmap/img67"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_14"
+                    android:background="@color/bg"/>
+                <LinearLayout
+                    android:id="@+id/huizhiview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_44"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="@dimen/dp_12"
+                        android:textSize="@dimen/dp_16"
+                        android:textColor="#373748"
+                        android:text="交易信息"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:paddingHorizontal="@dimen/dp_12"
+                        android:background="@color/xian"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:paddingHorizontal="@dimen/dp_12">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="交易编号："
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/dp_13"/>
+                        <TextView
+                            android:id="@+id/order_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#666666"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/dp_13"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:paddingHorizontal="@dimen/dp_12">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="兑换时间："
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/dp_13"/>
+                        <TextView
+                            android:id="@+id/exchange_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#666666"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/dp_13"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:paddingHorizontal="@dimen/dp_12">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="发放时间："
+                            android:textColor="#333333"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/dp_13"/>
+                        <TextView
+                            android:id="@+id/provide_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="交易编号："
+                            android:textColor="#666666"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/dp_13"/>
+                    </RelativeLayout>
+
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_14"
+                        android:background="@color/bg"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_44"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dp_12"
+                    android:textSize="@dimen/dp_16"
+                    android:textColor="#373748"
+                    android:text="藏宝图详情"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/xian"/>
+                <WebView
+                    android:id="@+id/web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_8"
+                    android:scrollbars="none"></WebView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/bg"/>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+</LinearLayout>

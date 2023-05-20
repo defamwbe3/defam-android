@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Medium.DeFam.app.common.titlebar.CommonTitleBar xmlns:titlebar="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        titlebar:centerText="积分商城"
+        titlebar:rightText="兑换记录"
+        titlebar:fillStatusBar="true" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/titleBar"
+        app:srlEnablePreviewInEditMode="false">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:banner_indicator_normal_color="@color/color_C8CAF0"
+                    app:banner_indicator_selected_color="@color/color_1B1BDD"
+                    app:banner_indicator_normal_width="6dp"
+                    app:banner_indicator_selected_width="6dp"
+                    app:banner_indicator_height="2dp"
+                    app:banner_indicator_radius="0dp"
+                    app:banner_auto_loop="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:layout_height="wrap_content"
+                    android:textColor="#373748"
+                    android:textSize="@dimen/dp_17"
+                    android:text="热门兑换"/>
+
+                <Medium.DeFam.app.common.widget.NoScrollGridView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginHorizontal="@dimen/dp_12"
+                    android:horizontalSpacing="@dimen/dp_8"
+                    android:verticalSpacing="@dimen/dp_8"
+                    android:numColumns="2"
+                    android:listSelector="@android:color/transparent" />
+                <include
+                    android:id="@+id/not"
+                    layout="@layout/notview" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <Button
+        android:id="@+id/duihuan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:text="兑换记录"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bt_bg"/>
+</RelativeLayout>

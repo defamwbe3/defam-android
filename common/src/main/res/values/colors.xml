@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFE</color>
+    <color name="colorPrimaryDark">#FAFAFE</color>
+    <color name="colorAccent">#344049</color>
+    <color name="color_1883D5">#FF530A</color>
+    <color name="color_D4D4D4">#D4D4D4</color>
+
+    <!--白天/黑夜模式-->
+    <color name="text">#222222</color>
+    <color name="texts">#373748</color>
+    <color name="hint">#BEBEC0</color>
+    <color name="newtexts">#344049</color>
+    <color name="textss">#454545</color>
+    <color name="textxiao">#9f9f9f</color>
+    <color name="textxiaonew">#828E96</color>
+    <color name="textxiaos">#7b7b7b</color>
+    <color name="desc">#8c8c8c</color>
+    <color name="bg">#FAFAFE</color>
+    <color name="transparent">#00000000</color>
+    <color name="xian">#F0F1F9</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_01C8E5">#01C8E5</color>
+    <color name="color_E0E0E0">#E0E0E0</color>
+</resources>

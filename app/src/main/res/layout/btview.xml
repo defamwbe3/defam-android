@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="52dp"
+        android:layout_height="@dimen/dp_26"
+        android:gravity="center"
+        android:textSize="@dimen/dp_13"
+        android:textColor="@color/white"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_12"
+        android:text="发布"
+        android:background="@drawable/r_hui50"/>
+</RelativeLayout>

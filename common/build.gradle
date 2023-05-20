@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api 'com.jakewharton:butterknife:10.2.1'
+
+    //1.0.5 当1.1.0出现问题可以回退到1.0.5.1
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
+
+    api 'com.makeramen:roundedimageview:2.3.0'//带圆角，边框的的ImageView
+    //okHttp网络请求
+    api 'com.lzy.net:okgo:3.0.4'//OkGo 是对okHttp的封装
+    api 'com.lzy.net:okserver:2.0.5'//OkGo上传下载扩展库
+    //api 'com.alibaba:fastjson:1.1.70.android'//fastJson解析json
+    api 'com.github.bumptech.glide:glide:4.14.2' //使用Glide加载图片
+    //annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    //api "com.github.bumptech.glide:avif-integration:4.13.2"
+    api 'com.just.agentweb:agentweb:4.0.2'
+    api 'top.zibin:Luban:1.1.8'
+    api 'com.google.code.gson:gson:2.8.6'
+    api 'org.greenrobot:eventbus:3.2.0'
+    api 'me.jessyan:autosize:1.2.1'
+    //api 'com.github.donkingliang:ImageSelector:1.9.2'
+    api 'com.ypx.yimagepicker:androidx:3.1.4'
+    api 'com.squareup.okhttp3:okhttp:4.6.0'
+    api 'com.lxj:xpopup:2.2.14'
+    //implementation 'com.qcloud.cos:cloud-infinite:1.2.1'
+    //implementation 'com.github.iflove:Logcat:v2.0.0'
+}

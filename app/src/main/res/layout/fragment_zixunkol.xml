@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    app:srlEnablePreviewInEditMode="false">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="Medium.DeFam.app.view.AppBarLayoutBehavior">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/coll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.youth.banner.Banner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="@dimen/dp_10"
+                        app:banner_auto_loop="true"
+                        app:banner_indicator_normal_color="@color/color_C8CAF0"
+                        app:banner_indicator_normal_width="6dp"
+                        app:banner_indicator_selected_color="@color/color_1B1BDD"
+                        app:banner_indicator_selected_width="6dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <!--  <net.lucode.hackware.magicindicator.MagicIndicator
+                  android:id="@+id/indicator"
+                  android:layout_width="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:layout_marginTop="@dimen/dp_10"
+                  android:layout_height="@dimen/dp_28"/>-->
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <include
+                android:id="@+id/not"
+                layout="@layout/notview" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
