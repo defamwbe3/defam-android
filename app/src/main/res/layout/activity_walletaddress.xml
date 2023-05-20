@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         titlebar:centerText="钱包地址"
         titlebar:fillStatusBar="true"/>
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <Medium.DeFam.app.common.widget.SmartRefreshView
         android:id="@+id/refreshLayout"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -37,7 +37,7 @@
         </RelativeLayout>
 
 
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </Medium.DeFam.app.common.widget.SmartRefreshView>
 
     <Button
         android:id="@+id/xinzeng"

@@ -1,54 +1,39 @@
 package Medium.DeFam.app.activity;
 
 import android.Manifest;
-import android.app.Application;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.bumptech.glide.Glide;
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.XXPermissions;
 import com.king.zxing.util.CodeUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Medium.DeFam.app.AppContext;
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.ConfigBean;
-import Medium.DeFam.app.bean.WalletAddressBean;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.titlebar.CommonTitleBar;
-import Medium.DeFam.app.common.utils.AllUtils;
 import Medium.DeFam.app.common.utils.FileUtilMy;
 import Medium.DeFam.app.common.utils.GlideUtil;
 import Medium.DeFam.app.common.utils.ToastUtil;

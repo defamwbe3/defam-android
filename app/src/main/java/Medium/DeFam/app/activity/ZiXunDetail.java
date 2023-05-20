@@ -20,11 +20,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-
-import org.json.JSONObject;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +45,6 @@ import Medium.DeFam.app.dialog.FenXiangDialogFragment;
 import Medium.DeFam.app.dialog.JiFenDialog;
 import Medium.DeFam.app.dialog.PingLunDialogFragment;
 import Medium.DeFam.app.dialog.PingLunTopDialogFragment;
-import Medium.DeFam.app.dialog.RenZhengDialog;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.MyTextView;
 import butterknife.BindView;

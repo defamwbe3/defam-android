@@ -3,23 +3,19 @@ package Medium.DeFam.app.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.JiFenJiLuDetail;
 import Medium.DeFam.app.adapter.JiFenJiLuAdapter;
-import Medium.DeFam.app.bean.FenSiBean;
 import Medium.DeFam.app.bean.JiFenJiLuBean;
 import Medium.DeFam.app.bean.JiFenJiLuDetailBean;
 import Medium.DeFam.app.common.base.BaseFragment;

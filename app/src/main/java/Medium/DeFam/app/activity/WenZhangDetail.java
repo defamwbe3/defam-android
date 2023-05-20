@@ -12,7 +12,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -22,11 +21,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lzy.okgo.model.Response;
 import com.makeramen.roundedimageview.RoundedImageView;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-
-import org.json.JSONObject;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +31,6 @@ import java.util.Map;
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.CommentAdapter;
 import Medium.DeFam.app.adapter.ImgAdapter;
-import Medium.DeFam.app.adapter.QuanZiAdapter;
 import Medium.DeFam.app.adapter.TuiJianAdapter;
 import Medium.DeFam.app.bean.CommentBean;
 import Medium.DeFam.app.bean.JiangLiBean;
@@ -48,7 +44,6 @@ import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.GlideUtil;
 import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.widget.NoScrollGridView;
-import Medium.DeFam.app.common.widget.NoScrollListView;
 import Medium.DeFam.app.dialog.FenXiangDialogFragment;
 import Medium.DeFam.app.dialog.JiFenDialog;
 import Medium.DeFam.app.dialog.PingLunDialogFragment;

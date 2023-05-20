@@ -8,22 +8,17 @@ import android.widget.GridView;
 
 import androidx.annotation.Nullable;
 
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.youth.banner.Banner;
-import com.youth.banner.indicator.CircleIndicator;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.DuiHuanAdapter;
-import Medium.DeFam.app.adapter.ImageRadiusAdapter;
-import Medium.DeFam.app.adapter.JiFenAdapter;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.titlebar.CommonTitleBar;
-import Medium.DeFam.app.common.widget.NoScrollGridView;
 import butterknife.BindView;
 
 

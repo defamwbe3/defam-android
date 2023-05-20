@@ -1,30 +1,22 @@
 package Medium.DeFam.app.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
+import com.lzy.okgo.model.Response;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.BaoZangDetail;
-import Medium.DeFam.app.activity.DuiHuan;
-import Medium.DeFam.app.activity.DuiHuanDetail;
-import Medium.DeFam.app.adapter.DuiHuanAdapter;
 import Medium.DeFam.app.adapter.JiangLiSuiPianAdapter;
 import Medium.DeFam.app.bean.SuiPianBean;
-import Medium.DeFam.app.bean.WalletAddressBean;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
@@ -63,16 +55,15 @@ public class JiangLiSuiPianFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+        refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
-            public void onRefresh(RefreshLayout refreshLayout) {
-                page = 1;
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 getData();
             }
-        });
-        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+
             @Override
-            public void onLoadMore(RefreshLayout refreshLayout) {
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                page = 1;
                 getData();
             }
         });

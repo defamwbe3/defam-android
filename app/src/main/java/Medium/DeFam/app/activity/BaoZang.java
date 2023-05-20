@@ -3,24 +3,20 @@ package Medium.DeFam.app.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.BaoZangAdapter;
-import Medium.DeFam.app.adapter.DuiHuanAdapter;
 import Medium.DeFam.app.bean.MyMapBean;
 import Medium.DeFam.app.bean.WalletAddressBean;
 import Medium.DeFam.app.common.Constants;
@@ -30,7 +26,7 @@ import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.titlebar.CommonTitleBar;
 import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.dialog.RenZhengDialog;
+import Medium.DeFam.app.common.widget.SmartRefreshView;
 import Medium.DeFam.app.dialog.TiXianDialog;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -38,7 +34,7 @@ import butterknife.BindView;
 
 public class BaoZang extends BaseActivity {
     @BindView(R.id.refreshLayout)
-    SmartRefreshLayout refreshLayout;
+    SmartRefreshView refreshLayout;
     @BindView(R.id.listview)
     GridView listview;
     private BaoZangAdapter adapter;
@@ -75,7 +71,7 @@ public class BaoZang extends BaseActivity {
     protected void initData() {
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
-            public void onLoadMore(RefreshLayout refreshLayout) {
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 getData();
             }
         });

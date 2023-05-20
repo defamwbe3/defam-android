@@ -3,39 +3,28 @@ package Medium.DeFam.app.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.annotation.NonNull;
 
 import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.About;
-import Medium.DeFam.app.activity.DuiHuanJiLu;
-import Medium.DeFam.app.activity.JiFenJiLuDetail;
 import Medium.DeFam.app.activity.JiFenShop;
 import Medium.DeFam.app.activity.JiangLiAdapter;
 import Medium.DeFam.app.activity.Web;
-import Medium.DeFam.app.adapter.DuiHuanJiLuAdapter;
 import Medium.DeFam.app.bean.InfoBean;
 import Medium.DeFam.app.bean.JiFenBean;
-import Medium.DeFam.app.bean.SuiPianBean;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.GlideUtil;
 import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.CountView;
@@ -74,16 +63,15 @@ public class JiangLiFragment extends BaseFragment {
     @Override
     public void initData() {
         super.initData();
-        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+        refreshLayout.setOnRefreshLoadMoreListener(new OnRefreshLoadMoreListener() {
             @Override
-            public void onRefresh(RefreshLayout refreshLayout) {
-                page = 1;
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
                 getData();
             }
-        });
-        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+
             @Override
-            public void onLoadMore(RefreshLayout refreshLayout) {
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                page = 1;
                 getData();
             }
         });

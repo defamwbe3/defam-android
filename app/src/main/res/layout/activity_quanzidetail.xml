@@ -14,7 +14,7 @@
         titlebar:fillStatusBar="true"
         titlebar:showBottomLine="true" />
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <Medium.DeFam.app.common.widget.SmartRefreshView
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -158,7 +158,7 @@ BlockFi日前根据美国破产法第11章在新泽西州美国破产法院（�
 
             </LinearLayout>
         </ScrollView>
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </Medium.DeFam.app.common.widget.SmartRefreshView>
 
     <View
         android:layout_width="match_parent"

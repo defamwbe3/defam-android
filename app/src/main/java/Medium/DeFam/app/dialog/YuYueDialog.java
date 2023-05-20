@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-
 import Medium.DeFam.app.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;

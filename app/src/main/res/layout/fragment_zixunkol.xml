@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<Medium.DeFam.app.common.widget.SmartRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/refreshLayout"
     android:layout_width="fill_parent"
@@ -73,5 +73,5 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</Medium.DeFam.app.common.widget.SmartRefreshView>
 

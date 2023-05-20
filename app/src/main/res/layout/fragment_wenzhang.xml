@@ -6,7 +6,7 @@
     <include
         android:id="@+id/not"
         layout="@layout/notview" />
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <Medium.DeFam.app.common.widget.SmartRefreshView
         android:id="@+id/refreshLayout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -16,6 +16,6 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </Medium.DeFam.app.common.widget.SmartRefreshView>
 
 </FrameLayout>

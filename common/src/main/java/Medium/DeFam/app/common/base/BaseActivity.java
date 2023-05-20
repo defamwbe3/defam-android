@@ -3,50 +3,26 @@ package Medium.DeFam.app.common.base;
 import static Medium.DeFam.app.common.timeset.PollingService.flag;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-
-import com.lxj.xpopup.XPopup;
-import com.lxj.xpopup.interfaces.OnCancelListener;
-import com.lxj.xpopup.interfaces.OnConfirmListener;
-import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
-import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-
-import Medium.DeFam.app.common.ActivityRouter;
-import Medium.DeFam.app.common.bean.MessageEvent;
-import Medium.DeFam.app.common.interfaces.LoadingInterface;
-import Medium.DeFam.app.common.interfaces.PermissionListener;
-import Medium.DeFam.app.common.them.Eyes;
-import Medium.DeFam.app.common.timeset.PollingUtils;
-import Medium.DeFam.app.common.titlebar.CommonTitleBar;
-import Medium.DeFam.app.common.utils.AppManager;
-import Medium.DeFam.app.common.utils.NetUtils;
-import Medium.DeFam.app.common.utils.UserUtil;
-import Medium.DeFam.app.common.widget.LoadingController;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import Medium.DeFam.app.common.R;
+import Medium.DeFam.app.common.ActivityRouter;
+import Medium.DeFam.app.common.bean.MessageEvent;
+import Medium.DeFam.app.common.interfaces.LoadingInterface;
+import Medium.DeFam.app.common.them.Eyes;
+import Medium.DeFam.app.common.timeset.PollingUtils;
+import Medium.DeFam.app.common.titlebar.CommonTitleBar;
+import Medium.DeFam.app.common.utils.AppManager;
+import Medium.DeFam.app.common.utils.UserUtil;
+import Medium.DeFam.app.common.widget.LoadingController;
 import butterknife.ButterKnife;
 
 
@@ -86,22 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
         initView(savedInstanceState, bundle);
         initData();
-        ClassicsHeader.REFRESH_HEADER_PULLDOWN = getString(R.string.refresh_header_pulling);
-        ClassicsHeader.REFRESH_HEADER_REFRESHING = getString(R.string.refresh_header_refreshing);
-        ClassicsHeader.REFRESH_HEADER_LOADING = getString(R.string.refresh_header_loading);
-        ClassicsHeader.REFRESH_HEADER_RELEASE = getString(R.string.refresh_header_release);
-        ClassicsHeader.REFRESH_HEADER_FINISH = getString(R.string.refresh_header_finish);
-        ClassicsHeader.REFRESH_HEADER_FAILED = getString(R.string.refresh_header_failed);
-        ClassicsHeader.REFRESH_HEADER_LASTTIME = getString(R.string.refresh_header_update);
-
-
-        ClassicsFooter.REFRESH_FOOTER_PULLUP = getString(R.string.refresh_footer_pulling);
-        ClassicsFooter.REFRESH_FOOTER_RELEASE = getString(R.string.refresh_footer_release);
-        ClassicsFooter.REFRESH_FOOTER_REFRESHING = getString(R.string.refresh_footer_loading);
-        ClassicsFooter.REFRESH_FOOTER_LOADING = getString(R.string.refresh_footer_refreshing);
-        ClassicsFooter.REFRESH_FOOTER_FINISH = getString(R.string.refresh_footer_finish);
-        ClassicsFooter.REFRESH_FOOTER_FAILED = getString(R.string.refresh_footer_failed);
-        ClassicsFooter.REFRESH_FOOTER_ALLLOADED = getString(R.string.refresh_footer_nothing);
         if (useEventBus()) {
             EventBus.getDefault().register(this);
         }

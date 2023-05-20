@@ -14,7 +14,7 @@
         titlebar:fillStatusBar="true"
         titlebar:showBottomLine="true" />
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+    <Medium.DeFam.app.common.widget.SmartRefreshView
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -278,7 +278,7 @@
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </Medium.DeFam.app.common.widget.SmartRefreshView>
 
     <View
         android:layout_width="match_parent"

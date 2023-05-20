@@ -10,24 +10,14 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
-import com.lzy.okgo.model.Response;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.GongGaoBean;
-import Medium.DeFam.app.bean.GongGaoHomeBean;
-import Medium.DeFam.app.bean.ZiXunDetailBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.MyTextView;
 import butterknife.BindView;
