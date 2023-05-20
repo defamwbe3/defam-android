@@ -32,7 +32,7 @@
             <ImageView
                 android:layout_width="@dimen/dp_20"
                 android:layout_height="@dimen/dp_20"
-                android:src="@mipmap/img6" />
+                android:src="@mipmap/icon_search" />
 
             <EditText
                 android:id="@+id/search"

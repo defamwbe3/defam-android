@@ -99,8 +99,8 @@ public class HomeFragment extends BaseFragment {
     protected void onEventComing(MessageEvent event) {
         super.onEventComing(event);
         if (event.getCode() == Constants.INFO) {
-            integral.setText("积分：" + ((InfoBean) event.getData()).getIntegral());
-            suipian_total.setText("藏宝图碎片：" + ((InfoBean) event.getData()).getSuipian_total());
+            integral.setText(((InfoBean) event.getData()).getIntegral());
+            suipian_total.setText(((InfoBean) event.getData()).getSuipian_total());
         }
     }
 
@@ -193,7 +193,7 @@ public class HomeFragment extends BaseFragment {
             public void onSuccess(JsonBean<BannerBean> data) {
                 banner.setAdapter(new ImageAdapter(getActivity(), data.getData().getData()))
                         .setBannerGalleryMZ(20)
-                        .addPageTransformer(new ZoomOutPageTransformer())
+//                        .addPageTransformer(new ZoomOutPageTransformer())
                         .addBannerLifecycleObserver(getActivity())//添加生命周期观察者
                         .setIndicator(new CircleIndicator(getActivity()));
             }
@@ -274,7 +274,7 @@ public class HomeFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.sousuo, R.id.gonggao, R.id.integralduihuan, R.id.suipian_totalduihuan, R.id.img})
+    @OnClick({R.id.sousuo, R.id.gonggao, R.id.integral, R.id.suipian_total, R.id.img})
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.sousuo) {
@@ -283,10 +283,10 @@ public class HomeFragment extends BaseFragment {
         } else if (id == R.id.gonggao) {
             Intent intent = new Intent(getActivity(), GongGao.class);
             startActivity(intent);
-        } else if (id == R.id.integralduihuan) {
+        } else if (id == R.id.integral) {
             Intent intent = new Intent(getActivity(), JiFenShop.class);
             startActivity(intent);
-        } else if (id == R.id.suipian_totalduihuan) {
+        } else if (id == R.id.suipian_total) {
             Intent intent = new Intent(getActivity(), BaoZang.class);
             startActivity(intent);
         } else if (id == R.id.img) {

@@ -39,7 +39,7 @@
                 app:tbn_text_color="@color/color_E0E0E0"
                 app:tbn_text_colors="@color/texts"
                 app:tbn_text_size="@dimen/dp_11"
-                app:tbn_tip="首页"/>
+                app:tbn_tip="新闻"/>
 
 
             <Medium.DeFam.app.common.widget.TabButton
