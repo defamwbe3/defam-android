@@ -89,8 +89,11 @@ public class GlideUtil {
 
         Glide.with(context).load(url).priority(Priority.HIGH)
                 .dontAnimate()
-                .error(R.mipmap.mycenter_3).into(imageView);//. skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.SOURCE)
-        //Glide.with(context).load(url).dontAnimate().error(R.mipmap.none) .into(imageView);//. skipMemoryCache(true)
+                .placeholder(R.mipmap.icon_banner_def)
+                .error(R.mipmap.icon_banner_def)
+                .into(imageView);
+//                . skipMemoryCache(true)
+//                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
 
 
     }
@@ -135,7 +138,7 @@ public class GlideUtil {
             url = Constants.HOST + url;
         }
         if (isValidContext(context)) {
-            Glide.with(context).asBitmap().load(url).placeholder(R.mipmap.mycenter_3).error(R.mipmap.mycenter_3).into(new SimpleTarget<Bitmap>() {
+            Glide.with(context).asBitmap().load(url).placeholder(R.mipmap.icon_banner_def).error(R.mipmap.icon_banner_def).into(new SimpleTarget<Bitmap>() {
                 @Override
                 public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                     if (null != imageView) {
@@ -176,7 +179,7 @@ public class GlideUtil {
         if (null == imageView) {
             return;
         }
-        Glide.with(context).load(url).placeholder(R.mipmap.mycenter_3).error(R.mipmap.mycenter_3).into(imageView);
+        Glide.with(context).load(url).placeholder(R.mipmap.icon_banner_def).error(R.mipmap.icon_banner_def).into(imageView);
     }
 
     public static void showSDImg(Context context, int url, ImageView imageView) {
@@ -202,7 +205,7 @@ public class GlideUtil {
      */
     public static void showAllImg(Context context, String url, ImageView imageView) {
         if (isValidContext(context)) {
-            Glide.with(context).load(url).placeholder(R.mipmap.mycenter_3).error(R.mipmap.mycenter_3).into(imageView);
+            Glide.with(context).load(url).placeholder(R.mipmap.icon_banner_def).error(R.mipmap.icon_banner_def).into(imageView);
         } else {
             Log.i("zmh", "Picture loading failed,context is null");
         }

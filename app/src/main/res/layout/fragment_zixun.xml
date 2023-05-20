@@ -10,19 +10,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_44">
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/indicator_top"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center_horizontal" />
 
             <LinearLayout
                 android:id="@+id/sousuo"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="@dimen/dp_32"
                 android:layout_centerVertical="true"
                 android:layout_marginHorizontal="@dimen/dp_12"
                 android:background="@drawable/r_hui20"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 android:paddingHorizontal="@dimen/dp_10">
 
                 <ImageView
@@ -33,19 +40,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginLeft="5dp"
                     android:text="搜索更多精彩资讯"
                     android:textColor="#BEBEC0"
-                    android:textSize="@dimen/dp_12" />
-
+                    android:textSize="12sp" />
             </LinearLayout>
-        </RelativeLayout>
 
-        <net.lucode.hackware.magicindicator.MagicIndicator
-            android:id="@+id/indicator_top"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp_32"
-            android:layout_gravity="center_horizontal" />
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/content"
@@ -62,5 +63,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="@dimen/dp_12"
         android:layout_marginBottom="@dimen/dp_20"
-        android:src="@mipmap/img7" />
+        android:src="@mipmap/img7"
+        android:visibility="gone" />
 </RelativeLayout>

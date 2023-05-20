@@ -64,7 +64,8 @@ public class ZiXunFragment extends BaseFragment {
     @BindView(R.id.indicator_top)
     MagicIndicator mIndicatorTop;
     private FragmentManager fManager;
-    private String[] toptitle = {"文章", "快讯", "KOL言论"};
+//    private String[] toptitle = {"文章", "快讯", "KOL言论"};
+    private String[] toptitle = {"快讯", "KOL言论"};
     private ZiXunWenZhangFragment ziXunWenZhangFragment;
     private ZiXunKuaiXunFragment ziXunKuaiXunFragment;
     private ZiXunKOLFragment ziXunKOLFragment;
@@ -135,7 +136,7 @@ public class ZiXunFragment extends BaseFragment {
         mIndicatorTop.onPageScrolled(index, 0.0F, 0);
         hideFragments(transaction);
         switch (index) {
-            case 0:
+            /*case 0:
                 if (ziXunWenZhangFragment == null) {
                     ziXunWenZhangFragment = new ZiXunWenZhangFragment();
                     transaction.add(R.id.content, ziXunWenZhangFragment);
@@ -154,6 +155,24 @@ public class ZiXunFragment extends BaseFragment {
                 }
                 break;
             case 2:
+                if (ziXunKOLFragment == null) {
+                    ziXunKOLFragment = new ZiXunKOLFragment();
+                    transaction.add(R.id.content, ziXunKOLFragment);
+
+                } else {
+                    transaction.show(ziXunKOLFragment);
+                }
+                break;*/
+            case 0:
+                if (ziXunKuaiXunFragment == null) {
+                    ziXunKuaiXunFragment = new ZiXunKuaiXunFragment();
+                    transaction.add(R.id.content, ziXunKuaiXunFragment);
+
+                } else {
+                    transaction.show(ziXunKuaiXunFragment);
+                }
+                break;
+            case 1:
                 if (ziXunKOLFragment == null) {
                     ziXunKOLFragment = new ZiXunKOLFragment();
                     transaction.add(R.id.content, ziXunKOLFragment);

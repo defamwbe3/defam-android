@@ -2,6 +2,7 @@ package Medium.DeFam.app.adapter;
 
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.Web;
 import Medium.DeFam.app.bean.BannerBean;
 import Medium.DeFam.app.common.utils.GlideUtil;
+import Medium.DeFam.app.common.utils.ScreenUtils;
 
 /**
  * 自定义布局，图片
@@ -44,9 +46,17 @@ public class ImageAdapter extends BannerAdapter<BannerBean.DataBean, ImageAdapte
     //创建ViewHolder，可以用viewType这个字段来区分不同的ViewHolder
     @Override
     public ImageHolder onCreateHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.banner_image, parent, false);
-        return new ImageHolder(view);
+        RoundedImageView imageView = new RoundedImageView(parent.getContext());
+        imageView.setCornerRadius(ScreenUtils.dp2Px(mContext,8));
+        //注意，必须设置为match_parent，这个是viewpager2强制要求的
+        imageView.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        /*View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.banner_image, parent, false);*/
+        return new ImageHolder(imageView);
     }
 
     @Override
@@ -65,9 +75,9 @@ public class ImageAdapter extends BannerAdapter<BannerBean.DataBean, ImageAdapte
     public class ImageHolder extends RecyclerView.ViewHolder {
         public RoundedImageView imageView;
 
-        public ImageHolder(@NonNull View view) {
+        public ImageHolder(@NonNull RoundedImageView view) {
             super(view);
-            this.imageView = (RoundedImageView) view.findViewById(R.id.img);
+            this.imageView = view;
         }
     }
 }
