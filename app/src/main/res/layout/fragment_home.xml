@@ -51,7 +51,7 @@
                         android:layout_marginLeft="@dimen/dp_5"
                         android:text="搜索更多精彩资讯"
                         android:textColor="#BEBEC0"
-                        android:textSize="@dimen/dp_12" />
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -60,24 +60,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_8"
-                    android:drawableLeft="@mipmap/icon_integral"
+                    android:drawableRight="@mipmap/icon_integral"
                     android:drawablePadding="@dimen/dp_3"
-                    android:gravity="center"
                     android:text="0.00"
-                    android:textColor="#1B1BDD"
-                    android:textSize="@dimen/dp_12" />
+                    android:textColor="#2F4AF9"
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/suipian_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_8"
-                    android:drawableLeft="@mipmap/icon_debris"
+                    android:layout_marginLeft="8dp"
+                    android:drawableRight="@mipmap/icon_debris"
                     android:drawablePadding="@dimen/dp_3"
-                    android:gravity="center"
                     android:text="0"
-                    android:textColor="#1B1BDD"
-                    android:textSize="@dimen/dp_12" />
+                    android:textColor="#2F4AF9"
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
         </LinearLayout>
