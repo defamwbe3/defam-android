@@ -65,7 +65,7 @@ public class ZiXunFragment extends BaseFragment {
     MagicIndicator mIndicatorTop;
     private FragmentManager fManager;
 //    private String[] toptitle = {"文章", "快讯", "KOL言论"};
-    private String[] toptitle = {"快讯", "KOL言论"};
+    private String[] toptitle = {"快讯", "KOL"};
     private ZiXunWenZhangFragment ziXunWenZhangFragment;
     private ZiXunKuaiXunFragment ziXunKuaiXunFragment;
     private ZiXunKOLFragment ziXunKOLFragment;
