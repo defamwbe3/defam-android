@@ -52,10 +52,9 @@ public class ImageAdapter extends BannerAdapter<BannerBean.DataBean, ImageAdapte
         imageView.setLayoutParams(new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
+        int padd = ScreenUtils.dp2PxInt(mContext,10);
+        imageView.setPadding(padd,0,padd,0);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        /*View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.banner_image, parent, false);*/
         return new ImageHolder(imageView);
     }
 
