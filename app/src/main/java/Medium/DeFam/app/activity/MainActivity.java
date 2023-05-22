@@ -1,8 +1,6 @@
 package Medium.DeFam.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -10,33 +8,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.xuexiang.xupdate.XUpdate;
-import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.ZoomOutPageTransformer;
-
-import Medium.DeFam.app.R;
-import Medium.DeFam.app.adapter.ImageAdapter;
-import Medium.DeFam.app.bean.BannerBean;
-import Medium.DeFam.app.common.CommonAppContext;
-import Medium.DeFam.app.common.Constants;
-import Medium.DeFam.app.common.base.BaseActivity;
-import Medium.DeFam.app.common.bean.MessageEvent;
-import Medium.DeFam.app.common.http.HttpClient;
-import Medium.DeFam.app.common.http.JsonBean;
-import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.SpUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.common.widget.MyViewPager;
-import Medium.DeFam.app.common.widget.TabButtonGroup;
-import Medium.DeFam.app.fragment.HomeFragment;
-import Medium.DeFam.app.fragment.HomeItemHuoDongFragment;
-import Medium.DeFam.app.fragment.HuoDongFragment;
-import Medium.DeFam.app.fragment.MyFragment;
-import Medium.DeFam.app.fragment.QuanZiFragment;
-import Medium.DeFam.app.fragment.ZiXunFragment;
-import Medium.DeFam.app.utils.CustomUpdateParser;
-import Medium.DeFam.app.utils.HttpUtil;
-import Medium.DeFam.app.view.MoveView;
-import butterknife.BindView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,6 +15,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import Medium.DeFam.app.R;
+import Medium.DeFam.app.common.CommonAppContext;
+import Medium.DeFam.app.common.Constants;
+import Medium.DeFam.app.common.base.BaseActivity;
+import Medium.DeFam.app.common.bean.MessageEvent;
+import Medium.DeFam.app.common.http.HttpClient;
+import Medium.DeFam.app.common.http.JsonBean;
+import Medium.DeFam.app.common.http.TradeHttpCallback;
+import Medium.DeFam.app.common.utils.ToastUtil;
+import Medium.DeFam.app.common.widget.MyViewPager;
+import Medium.DeFam.app.common.widget.TabButtonGroup;
+import Medium.DeFam.app.fragment.HomeFragment;
+import Medium.DeFam.app.fragment.HuoDongFragment;
+import Medium.DeFam.app.fragment.MyFragment;
+import Medium.DeFam.app.fragment.QuanZiFragment;
+import Medium.DeFam.app.fragment.ZiXunFragment;
+import Medium.DeFam.app.utils.CustomUpdateParser;
+import Medium.DeFam.app.utils.HttpUtil;
+import butterknife.BindView;
 
 
 public class MainActivity extends BaseActivity {

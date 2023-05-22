@@ -122,7 +122,8 @@
                             android:background="@drawable/r_qianlan"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
-                            android:paddingHorizontal="@dimen/dp_10">
+                            android:paddingHorizontal="@dimen/dp_10"
+                            android:visibility="gone">
 
                             <ImageView
                                 android:layout_width="@dimen/dp_16"

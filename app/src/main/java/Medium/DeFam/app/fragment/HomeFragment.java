@@ -182,7 +182,7 @@ public class HomeFragment extends BaseFragment {
         viewPager.setOffscreenPageLimit(fragmentList.size());
         viewPager.setCurrentItem(0);
         useBanner();
-        getGongGao();
+//        getGongGao();
     }
 
     private void useBanner() {
