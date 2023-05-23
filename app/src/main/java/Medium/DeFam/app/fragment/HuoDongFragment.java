@@ -182,8 +182,8 @@ public class HuoDongFragment extends BaseFragment {
             @Override
             public void onSuccess(JsonBean<BannerBean> data) {
                 banner.setAdapter(new ImageAdapter(getActivity(), data.getData().getData()))
-                        .setBannerGalleryMZ(20)
-                        .addPageTransformer(new ZoomOutPageTransformer())
+//                        .setBannerGalleryMZ(20)
+//                        .addPageTransformer(new ZoomOutPageTransformer())
                         .addBannerLifecycleObserver(getActivity())//添加生命周期观察者
                         .setIndicator(new CircleIndicator(getActivity()));
             }
