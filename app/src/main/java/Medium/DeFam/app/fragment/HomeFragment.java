@@ -15,17 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.youth.banner.Banner;
-
-import Medium.DeFam.app.activity.BaoZang;
-import Medium.DeFam.app.activity.FaBu;
-import Medium.DeFam.app.activity.GongGao;
-import Medium.DeFam.app.activity.JiFenShop;
-import Medium.DeFam.app.activity.Search;
-import Medium.DeFam.app.activity.ZiXunDetail;
-import Medium.DeFam.app.adapter.ImageAdapter;
-
 import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.ZoomOutPageTransformer;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -42,12 +32,17 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
+import Medium.DeFam.app.activity.BaoZang;
+import Medium.DeFam.app.activity.FaBu;
+import Medium.DeFam.app.activity.GongGao;
+import Medium.DeFam.app.activity.JiFenShop;
+import Medium.DeFam.app.activity.Search;
+import Medium.DeFam.app.adapter.ImageAdapter;
 import Medium.DeFam.app.adapter.ViewPagerAdapter;
 import Medium.DeFam.app.bean.BannerBean;
 import Medium.DeFam.app.bean.GongGaoBean;
 import Medium.DeFam.app.bean.InfoBean;
 import Medium.DeFam.app.common.ActivityRouter;
-import Medium.DeFam.app.common.CommonAppContext;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.bean.MessageEvent;
@@ -55,7 +50,6 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.them.Eyes;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.ScaleTransitionPagerTitleView;
 import butterknife.BindView;
@@ -157,11 +151,15 @@ public class HomeFragment extends BaseFragment {
         };
         commonNavigator.setAdapter(commonNavigatorAdapter);
         mIndicator.setNavigator(commonNavigator);
+
     }
 
     @Override
     public void initData() {
         super.initData();
+        useBanner();
+//        getGongGao();
+
         viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(), fragmentList);
         //给ViewPager设置适配器
         viewPager.setAdapter(viewPagerAdapter);
@@ -171,18 +169,17 @@ public class HomeFragment extends BaseFragment {
 
         titles.add("热门资讯");
         fragmentList.add(HomeItemFragment.newInstance("", true));
-        titles.add("热门活动");
-        fragmentList.add(HomeItemHuoDongFragment.newInstance("hot"));
+//        titles.add("热门活动");
+//        fragmentList.add(HomeItemHuoDongFragment.newInstance("hot"));
         /*titles.add("热门KOL");
         fragmentList.add(HomeItemKolFragment.newInstance(0));*/
-        titles.add("热门文章");
-        fragmentList.add(WenZhangFragment.newInstance(0));
+//        titles.add("热门文章");
+//        fragmentList.add(WenZhangFragment.newInstance(0));
         viewPagerAdapter.notifyDataSetChanged();
         commonNavigatorAdapter.notifyDataSetChanged();
         viewPager.setOffscreenPageLimit(fragmentList.size());
         viewPager.setCurrentItem(0);
-        useBanner();
-//        getGongGao();
+
     }
 
     private void useBanner() {

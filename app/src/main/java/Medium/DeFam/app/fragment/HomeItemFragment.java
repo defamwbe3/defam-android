@@ -18,7 +18,11 @@ import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.ZiXunDetail;
+import Medium.DeFam.app.adapter.HomeHotAdapter;
 import Medium.DeFam.app.adapter.HomeItemAdapter;
+import Medium.DeFam.app.adapter.TuiJianAdapter;
+import Medium.DeFam.app.bean.WenZhangBean;
+import Medium.DeFam.app.bean.WenZhangDetailBean;
 import Medium.DeFam.app.bean.ZiXunBean;
 import Medium.DeFam.app.bean.ZiXunDetailBean;
 import Medium.DeFam.app.common.base.BaseFragment;
@@ -27,10 +31,27 @@ import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
+import Medium.DeFam.app.view.recycle.RecyclerViewDivider;
 import butterknife.BindView;
 
 
 public class HomeItemFragment extends BaseFragment {
+    @BindView(R.id.refreshLayout)
+    SmartRefreshLayout refreshLayout;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+    HomeItemAdapter adapter;
+    @BindView(R.id.not)
+    View not;
+    private int page = 1;
+    private String status;
+
+    @BindView(R.id.hot_rv)
+    RecyclerView hotRV;
+
+
+    HomeHotAdapter homeHotAdapter;
+
     public static HomeItemFragment newInstance(String status) {
         HomeItemFragment fragment = new HomeItemFragment();
         Bundle args = new Bundle();
@@ -48,16 +69,6 @@ public class HomeItemFragment extends BaseFragment {
         return fragment;
     }
 
-    @BindView(R.id.refreshLayout)
-    SmartRefreshLayout refreshLayout;
-    @BindView(R.id.recyclerView)
-    RecyclerView recyclerView;
-    HomeItemAdapter adapter;
-    @BindView(R.id.not)
-    View not;
-    private int page = 1;
-    private String status;
-
     @Override
     public int getLayoutId() {
         return R.layout.fragment_homeitem;
@@ -66,6 +77,23 @@ public class HomeItemFragment extends BaseFragment {
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        RecyclerViewDivider rd = new RecyclerViewDivider(getActivity(), LinearLayoutManager.VERTICAL);
+        rd.setDividerHeight(0);
+        hotRV.addItemDecoration(rd);
+        hotRV.setLayoutManager(layoutManager);
+        homeHotAdapter = new HomeHotAdapter(getActivity());
+        hotRV.setAdapter(homeHotAdapter);
+        homeHotAdapter.setRecyclerViewOnItemClickListener(new HomeHotAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int pos, int type, ZiXunDetailBean data) {
+                Intent intent = new Intent(getActivity(), ZiXunDetail.class);
+                intent.putExtra("data", data);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -83,6 +111,7 @@ public class HomeItemFragment extends BaseFragment {
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 1;
                 getData();
+                getHotData();
             }
         });
         adapter = new HomeItemAdapter(getContext());
@@ -97,7 +126,21 @@ public class HomeItemFragment extends BaseFragment {
         recyclerView.setAdapter(adapter);
         if (load) {
             getData();
+            getHotData();
         }
+    }
+
+    private void getHotData(){
+        HttpClient.getInstance().gets(HttpUtil.RECOMMENDLIST, null, new TradeHttpCallback<JsonBean<ZiXunBean>>() {
+            @Override
+            public void onSuccess(JsonBean<ZiXunBean> data) {
+                if (null == data || null == data.getData()) {
+                    return;
+                }
+                homeHotAdapter.replaceAll(data.getData().getData());
+            }
+
+        });
     }
 
     private void getData() {

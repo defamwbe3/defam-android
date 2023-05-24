@@ -108,8 +108,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         CommentBean.DataBean mEntity = dataList.get(position);
-        GlideUtil.showImg(context, mEntity.getMember().getAvatar(), holder.avatar);
-        holder.nickname.setText(mEntity.getMember().getNickname());
+        if(mEntity.getMember()!=null){
+            GlideUtil.showImg(context, mEntity.getMember().getAvatar(), holder.avatar);
+            holder.nickname.setText(mEntity.getMember().getNickname());
+        }
         holder.created_ats.setText(AllUtils.getTimeFormatText(mEntity.getCreated_at()));
         holder.good.setText(mEntity.getGood());
         holder.is_good.setImageResource("0".equals(mEntity.getIs_good()) ? R.mipmap.img29 : R.mipmap.img30);
