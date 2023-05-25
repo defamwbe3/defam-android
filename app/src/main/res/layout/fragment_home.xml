@@ -25,18 +25,27 @@
                 android:orientation="horizontal">
 
                 <com.makeramen.roundedimageview.RoundedImageView
-                    android:layout_width="@dimen/dp_22"
-                    android:layout_height="@dimen/dp_26"
+                    android:layout_width="25dp"
+                    android:layout_height="24dp"
                     android:src="@mipmap/img77" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DeFam"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#060606"
+                    android:layout_marginLeft="3dp"/>
 
                 <LinearLayout
                     android:id="@+id/sousuo"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/dp_28"
-                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/r_hui20"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingHorizontal="@dimen/dp_8">
 
@@ -49,7 +58,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_5"
-                        android:text="搜索更多精彩资讯"
+                        android:text="ETH"
                         android:textColor="#BEBEC0"
                         android:textSize="12sp" />
 
