@@ -1,17 +1,14 @@
 package Medium.DeFam.app.utils;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.webkit.JavascriptInterface;
 
 import org.greenrobot.eventbus.EventBus;
 
-import Medium.DeFam.app.activity.GuanDianPut;
 import Medium.DeFam.app.activity.PutOk;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.bean.MessageEvent;
-import Medium.DeFam.app.common.utils.ToastUtil;
 
 public class AndroidtoJs extends Object {
     public static final String METHOD_NAME = "androidapp";

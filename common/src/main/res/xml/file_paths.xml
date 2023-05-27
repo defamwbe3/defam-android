@@ -3,6 +3,7 @@
     <external-path
         name="external_files"
         path="." />
+    <external-files-path name="umeng_cache" path="umeng_cache/"/>
     <root-path
         name="external_files"
         path="/storage/"/>

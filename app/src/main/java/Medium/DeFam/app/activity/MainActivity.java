@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hjq.toast.Toaster;
 import com.xuexiang.xupdate.XUpdate;
 
 import java.util.ArrayList;
@@ -24,7 +25,6 @@ import Medium.DeFam.app.common.bean.MessageEvent;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.widget.MyViewPager;
 import Medium.DeFam.app.common.widget.TabButtonGroup;
 import Medium.DeFam.app.fragment.HomeFragment;
@@ -155,7 +155,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         if (!mBackKeyPressed) {
-            ToastUtil.initToast("再按一次退出程序");
+            Toaster.show("再按一次退出程序");
             mBackKeyPressed = true;
             new Timer().schedule(new TimerTask() {
                 @Override

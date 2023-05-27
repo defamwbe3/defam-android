@@ -8,6 +8,7 @@ import android.widget.GridView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.model.Response;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
@@ -25,7 +26,6 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.titlebar.CommonTitleBar;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.widget.SmartRefreshView;
 import Medium.DeFam.app.dialog.TiXianDialog;
 import Medium.DeFam.app.utils.HttpUtil;
@@ -135,7 +135,7 @@ public class BaoZang extends BaseActivity {
                 if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.addData(data.getData().getData());

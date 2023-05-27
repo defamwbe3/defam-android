@@ -7,6 +7,7 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.callback.Callback;
 import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
@@ -17,7 +18,6 @@ import Medium.DeFam.app.common.R;
 import Medium.DeFam.app.common.utils.AppManager;
 import Medium.DeFam.app.common.utils.DialogUitl;
 import Medium.DeFam.app.common.utils.LogUtils;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 
 import java.lang.reflect.ParameterizedType;
@@ -69,7 +69,7 @@ public abstract class TradeHttpCallback<T> implements Callback<T> {
                 showDialog();
             } else {
                 //服务器返回值异常--->ret: " + bean.getRet() + " msg: " + bean.getMsg());
-                ToastUtil.initToast(bean.getMessage());
+                Toaster.show(bean.getMessage());
             }
         }
 
@@ -80,7 +80,7 @@ public abstract class TradeHttpCallback<T> implements Callback<T> {
         Throwable t = response.getException();
         LogUtils.i("网络请求错误---->" + t.getClass() + " : " + t.getMessage());
         if (t instanceof SocketTimeoutException || t instanceof ConnectException || t instanceof UnknownHostException || t instanceof UnknownServiceException || t instanceof SocketException) {
-            ToastUtil.initToast(R.string.load_failure);
+            Toaster.show(R.string.load_failure);
             return;
         }
         String err = t.getMessage();
@@ -93,7 +93,7 @@ public abstract class TradeHttpCallback<T> implements Callback<T> {
                         //登录过期，退出登录
                         showDialog();
                     } else if (!TextUtils.isEmpty(jsonBean.getMessage())) {
-                        ToastUtil.initToast(jsonBean.getMessage());
+                        Toaster.show(jsonBean.getMessage());
                     }
                 }
             } catch (Exception e) {
@@ -120,7 +120,7 @@ public abstract class TradeHttpCallback<T> implements Callback<T> {
         if (null != UserUtil.getUserBean()) {
             UserUtil.setUserBean(null);
             Activity activity = AppManager.getAppManager().currentActivity();
-            ToastUtil.initToast(activity.getString(R.string.dengluguoqi));
+            Toaster.show(activity.getString(R.string.dengluguoqi));
             Intent intent = ActivityRouter.getIntent(activity, ActivityRouter.Mall.MALL_LOGIN);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             activity.startActivity(intent);

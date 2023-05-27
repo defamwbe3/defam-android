@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 
 import com.hjq.permissions.OnPermissionCallback;
 import com.hjq.permissions.XXPermissions;
+import com.hjq.toast.Toaster;
 import com.king.zxing.util.CodeUtils;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -36,7 +37,6 @@ import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.titlebar.CommonTitleBar;
 import Medium.DeFam.app.common.utils.FileUtilMy;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -111,7 +111,7 @@ public class YaoQing extends BaseActivity {
             ClipData mClipData = ClipData.newPlainText("Label", img.getTag().toString());
             // 将ClipData内容放到系统剪贴板里。
             cm.setPrimaryClip(mClipData);
-            ToastUtil.initToast("复制成功");
+            Toaster.show("复制成功");
         } else if (id == R.id.yaoqing) {
             //获取剪贴板管理器：
             ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -119,7 +119,7 @@ public class YaoQing extends BaseActivity {
             ClipData mClipData = ClipData.newPlainText("Label", UserUtil.getUserBean().getInvite_code());
             // 将ClipData内容放到系统剪贴板里。
             cm.setPrimaryClip(mClipData);
-            ToastUtil.initToast("复制成功");
+            Toaster.show("复制成功");
         } else if (id == R.id.baocun) {
             XXPermissions.with(YaoQing.this)
                     // 不适配 Android 11 可以这样写
@@ -139,11 +139,11 @@ public class YaoQing extends BaseActivity {
                         @Override
                         public void onDenied(List<String> permissions, boolean never) {
                             if (never) {
-                                ToastUtil.initToast("被永久拒绝授权，请手动授予存储权限");
+                                Toaster.show("被永久拒绝授权，请手动授予存储权限");
                                 // 如果是被永久拒绝就跳转到应用权限系统设置页面
                                 XXPermissions.startPermissionActivity(YaoQing.this, permissions);
                             } else {
-                                ToastUtil.initToast("获取存储权限失败");
+                                Toaster.show("获取存储权限失败");
                             }
                         }
                     });
@@ -155,7 +155,7 @@ public class YaoQing extends BaseActivity {
         String imageName = "JPEG_" + "down" + System.currentTimeMillis() + ".jpg";
         File erweimaImg = new File(FileUtilMy.SDPATH, imageName);
         if (erweimaImg == null) {
-            ToastUtil.initToast("创建文件夹失败");
+            Toaster.show("创建文件夹失败");
             return;
         }
         if (false == myview.isDrawingCacheEnabled()) {
@@ -180,9 +180,9 @@ public class YaoQing extends BaseActivity {
         try {
             MediaStore.Images.Media.insertImage(getContentResolver(),
                     erweimaImg.getAbsolutePath(), imageName, null);
-            ToastUtil.initToast("保存成功，请您到 相册/图库 中查看");
+            Toaster.show("保存成功，请您到 相册/图库 中查看");
         } catch (FileNotFoundException e) {
-            ToastUtil.initToast("保存失败");
+            Toaster.show("保存失败");
             e.printStackTrace();
         }
         // 最后通知图库更新

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 
+import com.hjq.toast.Toaster;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.impl.LoadingPopupView;
 
@@ -133,7 +134,7 @@ public class UpdateImageUtil {
                     @Override
                     public void onError(Throwable e) {
                         // TODO 当压缩过程出现问题时调用
-                        ToastUtil.initToast("压缩失败: " + e.getMessage());
+                        Toaster.show("压缩失败: " + e.getMessage());
                         dismiss();
                     }
                 }).launch();

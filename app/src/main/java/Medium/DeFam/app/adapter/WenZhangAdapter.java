@@ -20,8 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,19 +27,15 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.HuoDongDetail;
 import Medium.DeFam.app.activity.Photo;
 import Medium.DeFam.app.bean.JiangLiBean;
 import Medium.DeFam.app.bean.WenZhangDetailBean;
-import Medium.DeFam.app.common.ActivityRouter;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.AllUtils;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
-import Medium.DeFam.app.dialog.FenXiangDialogFragment;
 import Medium.DeFam.app.dialog.JiFenDialog;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.ExpandTextView;

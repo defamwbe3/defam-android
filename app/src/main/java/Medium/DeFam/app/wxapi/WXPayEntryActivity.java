@@ -56,7 +56,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     public void onResp(BaseResp resp) {
         Log.i("hhh", "onPayFinish, errCode = " + resp.errCode + "," + resp.errStr);
-        //ToastUtil.initToast("onPayFinish, errCode = " + resp.errCode + "," + resp.errStr);
+        //Toaster.show("onPayFinish, errCode = " + resp.errCode + "," + resp.errStr);
         int code = resp.errCode;
 		/*
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);

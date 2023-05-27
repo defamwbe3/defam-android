@@ -12,7 +12,10 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 
 
+import com.umeng.commonsdk.UMConfigure;
+
 import Medium.DeFam.app.R;
+import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.utils.SpUtil;
 import Medium.DeFam.app.dialog.QuanXianAlertDialog;
 import Medium.DeFam.app.dialog.QuanXianNoAlertDialog;
@@ -111,6 +114,8 @@ public class AppStart extends BaseActivity {
      * 跳转到...
      */
     private void redirectTo() {
+        UMConfigure.init(getApplicationContext(), Constants.UMENG_APPKEY
+                ,"common",UMConfigure.DEVICE_TYPE_PHONE,"");
         if (SpUtil.getInstance().getBooleanValue(SpUtil.IS_ONE)) {
             Intent intent = new Intent(this, Welcom.class);
             startActivity(intent);

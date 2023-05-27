@@ -1,12 +1,13 @@
 package Medium.DeFam.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
+
+import com.hjq.toast.Toaster;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,8 +19,6 @@ import Medium.DeFam.app.common.bean.UserBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -55,7 +54,7 @@ public class NickNameSet extends BaseActivity {
         int id = v.getId();
         if (id == R.id.ok) {
             if (TextUtils.isEmpty(nickname.getText().toString())) {
-                ToastUtil.initToast("请输入您的昵称");
+                Toaster.show("请输入您的昵称");
                 return;
             }
             Map<String, String> map = new HashMap<>();

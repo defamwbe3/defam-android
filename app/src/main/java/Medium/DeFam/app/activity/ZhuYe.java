@@ -1,7 +1,6 @@
 package Medium.DeFam.app.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.appbar.AppBarLayout;
-import com.lzy.okgo.model.Response;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -35,7 +33,6 @@ import java.util.Map;
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.ViewPagerAdapter;
 import Medium.DeFam.app.bean.InfoBean;
-import Medium.DeFam.app.bean.YaoQingListBean;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.bean.UserBean;
 import Medium.DeFam.app.common.http.HttpClient;
@@ -44,17 +41,12 @@ import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.interfaces.OnUpdateImgListener;
 import Medium.DeFam.app.common.them.Eyes;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UpdateImageUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
-import Medium.DeFam.app.fragment.HomeFragment;
-import Medium.DeFam.app.fragment.HomeItemFragment;
-import Medium.DeFam.app.fragment.HomeItemKolFragment;
 import Medium.DeFam.app.fragment.ZhuYeFragment;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 import butterknife.OnClick;
-import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.utils.AutoSizeUtils;
 
 

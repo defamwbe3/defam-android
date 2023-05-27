@@ -15,40 +15,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 
 
-import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
-import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.ZoomOutPageTransformer;
+import com.hjq.toast.Toaster;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.WenZhangDetail;
-import Medium.DeFam.app.adapter.ImageAdapter;
-import Medium.DeFam.app.adapter.PingLunDialogAdapter;
-import Medium.DeFam.app.bean.BannerBean;
 import Medium.DeFam.app.bean.JiangLiBean;
 import Medium.DeFam.app.common.base.BaseDialogFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.wx.WxShareInstance;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 
 
 public class FenXiangDialogFragment extends BaseDialogFragment {
@@ -103,7 +91,7 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
                     ClipData mClipData = ClipData.newPlainText("Label", share_link);
                     // 将ClipData内容放到系统剪贴板里。
                     cm.setPrimaryClip(mClipData);
-                    ToastUtil.initToast("复制成功");
+                    Toaster.show("复制成功");
                     dismiss();
                     if(!TextUtils.isEmpty(data.getData().getPoint())&&Integer.parseInt(data.getData().getPoint())>0){
                         JiFenDialog payDialog = new JiFenDialog(mContext,"分享成功获得"+data.getData().getPoint()+"积分");
@@ -117,12 +105,8 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
                 }
             });
         } else if (id == R.id.weixin) {
-            //share2WX(SendMessageToWX.Req.WXSceneSession);
-           /* if (null == alldata) {//5 默认平台分享推广
-                wxShare.shareXCX(context, "pages/mall/index/index", "龙莱商城", null);
-            } else {
-                wxShare.shareXCX(context, "pages/multi-merchant/mall/detail/detail?goodId=" + alldata.getGoods_rs().getId(), alldata.getGoods_rs().getName(), null);
-            }*/
+            new ShareAction(getActivity()).setPlatform(SHARE_MEDIA.WEIXIN)
+                    .setCallback(shareListener).withText(share_link).share();
         }/*else if (stringList.get(position).equals("朋友圈")) {
             if (!isWeixinAvilible(context)) {
                 ToastUtil.show("未检测到微信");
@@ -141,4 +125,29 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
         }*/
     }
 
+
+    UMShareListener shareListener = new UMShareListener() {
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+
+        }
+
+        @Override
+        public void onResult(SHARE_MEDIA share_media) {
+            Toaster.show("分享成功");
+            dismiss();
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+            Toaster.show("分享失败");
+            dismiss();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA share_media) {
+            Toaster.show("分享取消");
+            dismiss();
+        }
+    };
 }

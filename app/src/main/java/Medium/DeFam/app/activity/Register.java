@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,8 +35,6 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.ACache;
-import Medium.DeFam.app.common.utils.AllUtils;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -157,24 +157,24 @@ public class Register extends BaseActivity {
             if (!register_agree.isChecked()) {
                 Animation animation = AnimationUtils.loadAnimation(this, R.anim.translate_checkbox_shake);
                 ll_shake.startAnimation(animation);
-                ToastUtil.initToast("请先勾选同意《用户协议》和《隐私政策》");
+                Toaster.show("请先勾选同意《用户协议》和《隐私政策》");
                 return;
             }
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号码");
+                Toaster.show("请输入手机号码");
                 return;
             }
 
             if (TextUtils.isEmpty(code.getText().toString())) {
-                ToastUtil.initToast("请输入请输入验证码");
+                Toaster.show("请输入请输入验证码");
                 return;
             }
             if (TextUtils.isEmpty(password.getText().toString())) {
-                ToastUtil.initToast("请输入密码");
+                Toaster.show("请输入密码");
                 return;
             }
             if (TextUtils.isEmpty(polygin.getText().toString())) {
-                ToastUtil.initToast("请输入Polygon地址");
+                Toaster.show("请输入Polygon地址");
                 return;
             }
             Map<String, String> map = new HashMap<>();
@@ -203,11 +203,11 @@ public class Register extends BaseActivity {
             if (!register_agree.isChecked()) {
                 Animation animation = AnimationUtils.loadAnimation(this, R.anim.translate_checkbox_shake);
                 ll_shake.startAnimation(animation);
-                ToastUtil.initToast("请阅读并勾选协议");
+                Toaster.show("请阅读并勾选协议");
                 return;
             }
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号码");
+                Toaster.show("请输入手机号码");
                 return;
             }
 
@@ -217,7 +217,7 @@ public class Register extends BaseActivity {
             HttpClient.getInstance().gets(HttpUtil.SMSCODE, map, new TradeHttpCallback<JsonBean<List<String>>>() {
                 @Override
                 public void onSuccess(JsonBean<List<String>> data) {
-                    //ToastUtil.initToast(data.getMessage());
+                    //Toaster.show(data.getMessage());
                     iv_yanzhengma.setEnabled(false);
                     countDownTimer.start();
                 }

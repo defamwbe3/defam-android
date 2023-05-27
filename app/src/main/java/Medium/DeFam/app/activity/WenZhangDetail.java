@@ -19,6 +19,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.model.Response;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
@@ -42,7 +43,6 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.widget.NoScrollGridView;
 import Medium.DeFam.app.dialog.FenXiangDialogFragment;
 import Medium.DeFam.app.dialog.JiFenDialog;
@@ -232,7 +232,7 @@ public class WenZhangDetail extends BaseActivity {
                 if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     commentAdapter.addData(data.getData().getData());

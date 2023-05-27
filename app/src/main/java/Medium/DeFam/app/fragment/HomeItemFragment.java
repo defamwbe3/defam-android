@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.model.Response;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -20,16 +21,12 @@ import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.ZiXunDetail;
 import Medium.DeFam.app.adapter.HomeHotAdapter;
 import Medium.DeFam.app.adapter.HomeItemAdapter;
-import Medium.DeFam.app.adapter.TuiJianAdapter;
-import Medium.DeFam.app.bean.WenZhangBean;
-import Medium.DeFam.app.bean.WenZhangDetailBean;
 import Medium.DeFam.app.bean.ZiXunBean;
 import Medium.DeFam.app.bean.ZiXunDetailBean;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.recycle.RecyclerViewDivider;
 import butterknife.BindView;
@@ -157,7 +154,7 @@ public class HomeItemFragment extends BaseFragment {
                 if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.addData(data.getData().getData());

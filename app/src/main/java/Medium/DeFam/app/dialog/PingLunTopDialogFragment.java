@@ -3,10 +3,8 @@ package Medium.DeFam.app.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,19 +18,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import org.json.JSONObject;
+import com.hjq.toast.Toaster;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.CommentBean;
 import Medium.DeFam.app.bean.JiangLiBean;
 import Medium.DeFam.app.common.base.BaseDialogFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -90,7 +86,7 @@ public class PingLunTopDialogFragment extends BaseDialogFragment {
         int id = v.getId();
         if (id == R.id.fabu) {
             if (TextUtils.isEmpty(content.getText().toString())) {
-                ToastUtil.initToast("说点什么吧~");
+                Toaster.show("说点什么吧~");
                 return;
             }
             Map<String, String> map = new HashMap<>();

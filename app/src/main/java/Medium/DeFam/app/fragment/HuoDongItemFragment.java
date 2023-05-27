@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.model.Response;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
@@ -23,7 +24,6 @@ import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 
@@ -100,7 +100,7 @@ public class HuoDongItemFragment extends BaseFragment {
                 if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.addData(data.getData());

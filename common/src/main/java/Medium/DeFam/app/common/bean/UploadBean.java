@@ -1,6 +1,8 @@
 package Medium.DeFam.app.common.bean;
 
-public class UploadBean {
+import java.io.Serializable;
+
+public class UploadBean implements Serializable {
     private String filePath;
 
     public String getFilePath() {

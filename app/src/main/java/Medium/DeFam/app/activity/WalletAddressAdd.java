@@ -1,15 +1,13 @@
 package Medium.DeFam.app.activity;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.lzy.okgo.model.Response;
+import com.hjq.toast.Toaster;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +18,6 @@ import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -61,11 +58,11 @@ public class WalletAddressAdd extends BaseActivity {
         int id = v.getId();
         if (id == R.id.ok) {
             if (TextUtils.isEmpty(title.getText().toString())) {
-                ToastUtil.initToast("请输入标签");
+                Toaster.show("请输入标签");
                 return;
             }
             if (TextUtils.isEmpty(address.getText().toString())) {
-                ToastUtil.initToast("请输入对应的地址");
+                Toaster.show("请输入对应的地址");
                 return;
             }
             if(null!=alldata){

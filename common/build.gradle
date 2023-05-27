@@ -57,4 +57,7 @@ dependencies {
     api  'io.github.scwang90:refresh-layout-kernel:2.0.6'      //核心必须依赖
     api  'io.github.scwang90:refresh-footer-classics:2.0.6'    //经典加载
     api  'io.github.scwang90:refresh-header-material:2.0.6'    //谷歌刷新头
+
+    //公共toast
+    api 'com.github.getActivity:Toaster:12.2'
 }

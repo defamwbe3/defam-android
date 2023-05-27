@@ -6,12 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
-import com.youth.banner.Banner;
 
 import org.greenrobot.eventbus.EventBus;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.BaoZang;
@@ -28,7 +24,6 @@ import Medium.DeFam.app.activity.WalletAddress;
 import Medium.DeFam.app.activity.XiaoXi;
 import Medium.DeFam.app.activity.YaoQing;
 import Medium.DeFam.app.activity.ZhuYe;
-import Medium.DeFam.app.activity.ZiXunDetail;
 import Medium.DeFam.app.bean.InfoBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseFragment;
@@ -39,7 +34,6 @@ import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.them.Eyes;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;

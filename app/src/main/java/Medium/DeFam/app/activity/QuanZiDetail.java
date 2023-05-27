@@ -98,7 +98,7 @@ public class QuanZiDetail extends BaseActivity {
                 }
                 if (page > 1) {
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.setLoadmoreBean(data.getData().getData());

@@ -2,7 +2,6 @@ package Medium.DeFam.app.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.lzy.okgo.model.Response;
+import com.hjq.toast.Toaster;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.HashMap;
@@ -21,16 +20,12 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.RenZheng;
-import Medium.DeFam.app.activity.WalletAddress;
 import Medium.DeFam.app.bean.MyMapBean;
 import Medium.DeFam.app.bean.WalletAddressBean;
-import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -110,7 +105,7 @@ public class TiXianDialog extends Dialog {
             dismiss();
         } else if (id == R.id.renzheng) {
             if(TextUtils.isEmpty(dizhi.getText().toString())){
-                ToastUtil.initToast("请编辑添加钱包地址");
+                Toaster.show("请编辑添加钱包地址");
                 return;
             }
             Map<String, String> map = new HashMap<>();
@@ -122,7 +117,7 @@ public class TiXianDialog extends Dialog {
                     if (null == data || null == data.getData()) {
                         return;
                     }
-                    ToastUtil.initToast("操作成功");
+                    Toaster.show("操作成功");
                     mItemSelectListener.setNoticeListener(1,0,"");
                     dismiss();
                 }

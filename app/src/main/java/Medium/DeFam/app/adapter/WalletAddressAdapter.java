@@ -1,7 +1,6 @@
 package Medium.DeFam.app.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +9,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.lzy.okgo.model.Response;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.Setting;
 import Medium.DeFam.app.bean.WalletAddressBean;
-import Medium.DeFam.app.common.ActivityRouter;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.dialog.AllDialog;
 import Medium.DeFam.app.utils.HttpUtil;
 

@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +19,6 @@ import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -116,35 +117,35 @@ public class RenZheng extends BaseActivity {
         int id = v.getId();
         if (id == R.id.tijiao) {
             if (TextUtils.isEmpty(title.getText().toString())) {
-                ToastUtil.initToast("请填写项目名称/公司/DAO名称");
+                Toaster.show("请填写项目名称/公司/DAO名称");
                 return;
             }
             if (TextUtils.isEmpty(introduction.getText().toString())) {
-                ToastUtil.initToast("请填写简介");
+                Toaster.show("请填写简介");
                 return;
             }
             if (TextUtils.isEmpty(website.getText().toString())) {
-                ToastUtil.initToast("请填写网站链接");
+                Toaster.show("请填写网站链接");
                 return;
             }
             if (TextUtils.isEmpty(applicant.getText().toString())) {
-                ToastUtil.initToast("请输入申请人职位");
+                Toaster.show("请输入申请人职位");
                 return;
             }
             if (TextUtils.isEmpty(contact.getText().toString())) {
-                ToastUtil.initToast("请填写微信/手机号/邮箱均可");
+                Toaster.show("请填写微信/手机号/邮箱均可");
                 return;
             }
             if (TextUtils.isEmpty(twitter_url.getText().toString())) {
-                ToastUtil.initToast("请填写网站链接");
+                Toaster.show("请填写网站链接");
                 return;
             }
             if (TextUtils.isEmpty(telegram_url.getText().toString())) {
-                ToastUtil.initToast("请填写网站链接");
+                Toaster.show("请填写网站链接");
                 return;
             }
             if (TextUtils.isEmpty(discord.getText().toString())) {
-                ToastUtil.initToast("请填写网站链接");
+                Toaster.show("请填写网站链接");
                 return;
             }
             Map<String, String> map = new HashMap<>();
@@ -161,7 +162,7 @@ public class RenZheng extends BaseActivity {
             HttpClient.getInstance().posts(HttpUtil.AUTHENTERPRISE, map, new TradeHttpCallback<JsonBean<String>>() {
                 @Override
                 public void onSuccess(JsonBean<String> data) {
-                    ToastUtil.initToast("已提交");
+                    Toaster.show("已提交");
                     finish();
                 }
 

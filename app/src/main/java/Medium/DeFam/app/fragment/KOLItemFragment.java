@@ -111,7 +111,7 @@ public class KOLItemFragment extends BaseFragment {
                /* if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.addData(data.getData().getData());

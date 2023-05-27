@@ -2,24 +2,16 @@ package Medium.DeFam.app.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
-
-import com.youth.banner.Banner;
-import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.ZoomOutPageTransformer;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
-import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.UIUtil;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter;
@@ -27,25 +19,11 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerInd
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.LinePagerIndicator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.FaBu;
 import Medium.DeFam.app.activity.Search;
-import Medium.DeFam.app.adapter.ImageAdapter;
-import Medium.DeFam.app.adapter.ViewPagerAdapter;
-import Medium.DeFam.app.bean.BannerBean;
-import Medium.DeFam.app.bean.CategoryBean;
 import Medium.DeFam.app.common.base.BaseFragment;
-import Medium.DeFam.app.common.http.HttpClient;
-import Medium.DeFam.app.common.http.JsonBean;
-import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.them.Eyes;
-import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.ScaleTransitionPagerTitleView;
 import butterknife.BindView;
 import butterknife.OnClick;

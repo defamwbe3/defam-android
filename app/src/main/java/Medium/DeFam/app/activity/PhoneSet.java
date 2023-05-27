@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,9 +22,6 @@ import Medium.DeFam.app.common.bean.UserBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.AllUtils;
-import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -74,7 +73,7 @@ public class PhoneSet extends BaseActivity {
         int id = v.getId();
         if (id == R.id.iv_yanzhengma) {
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号码");
+                Toaster.show("请输入手机号码");
                 return;
             }
 
@@ -84,7 +83,7 @@ public class PhoneSet extends BaseActivity {
             HttpClient.getInstance().gets(HttpUtil.SMSCODE, map, new TradeHttpCallback<JsonBean<List<String>>>() {
                 @Override
                 public void onSuccess(JsonBean<List<String>> data) {
-                    //ToastUtil.initToast(data.getMessage());
+                    //Toaster.show(data.getMessage());
                     iv_yanzhengma.setEnabled(false);
                     code.setText("");
                     countDownTimer.start();
@@ -98,12 +97,12 @@ public class PhoneSet extends BaseActivity {
             });
         }else  if (id == R.id.ok) {
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号码");
+                Toaster.show("请输入手机号码");
                 return;
             }
 
             if (TextUtils.isEmpty(code.getText().toString())) {
-                ToastUtil.initToast("请输入请输入验证码");
+                Toaster.show("请输入请输入验证码");
                 return;
             }
             Map<String, String> map = new HashMap<>();

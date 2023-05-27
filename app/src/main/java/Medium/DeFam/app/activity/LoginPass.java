@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,8 +32,6 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.ACache;
-import Medium.DeFam.app.common.utils.AllUtils;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.wx.WxLogin;
@@ -139,16 +139,16 @@ public class LoginPass extends BaseActivity {
             if (!register_agree.isChecked()) {
                 Animation animation = AnimationUtils.loadAnimation(this, R.anim.translate_checkbox_shake);
                 ll_shake.startAnimation(animation);
-                ToastUtil.initToast("注册登录即表示您已阅读并同意《用户协议》和《隐私政策》");
+                Toaster.show("注册登录即表示您已阅读并同意《用户协议》和《隐私政策》");
                 return;
             }
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号码");
+                Toaster.show("请输入手机号码");
                 return;
             }
 
             if (TextUtils.isEmpty(pass.getText().toString())) {
-                ToastUtil.initToast("请输入密码");
+                Toaster.show("请输入密码");
                 return;
             }
             Map<String, String> map = new HashMap<>();
@@ -193,7 +193,7 @@ public class LoginPass extends BaseActivity {
             if (!register_agree.isChecked()) {
                 Animation animation = AnimationUtils.loadAnimation(this, R.anim.translate_checkbox_shake);
                 ll_shake.startAnimation(animation);
-                ToastUtil.initToast("注册登录即表示您已阅读并同意《用户协议》和《隐私政策》");
+                Toaster.show("注册登录即表示您已阅读并同意《用户协议》和《隐私政策》");
                 return;
             }
             WxLogin.getInstance().login(new WxLoginResultListener() {
@@ -205,7 +205,7 @@ public class LoginPass extends BaseActivity {
                 @Override
                 public void onError(String errorDetail) {
                     if (!TextUtils.isEmpty(errorDetail)) {
-                        ToastUtil.initToast(errorDetail);
+                        Toaster.show(errorDetail);
                     }
                 }
 

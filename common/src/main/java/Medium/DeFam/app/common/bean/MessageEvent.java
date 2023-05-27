@@ -1,6 +1,8 @@
 package Medium.DeFam.app.common.bean;
 
-public class MessageEvent<T> {
+import java.io.Serializable;
+
+public class MessageEvent<T> implements Serializable {
 
     private int code = -1;
 

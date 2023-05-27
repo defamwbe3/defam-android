@@ -40,7 +40,7 @@ public class WxLogin {
             listener.onError("未安装微信");
             return;
         }
-        WXEntryActivity.setWxLoginListener(listener);//设置登录结果回调
+//        WXEntryActivity.setWxLoginListener(listener);//设置登录结果回调
         //启动微信登录
         SendAuth.Req req = new SendAuth.Req();
         req.scope = "snsapi_userinfo";//snsapi_base或者snsapi_userinfo

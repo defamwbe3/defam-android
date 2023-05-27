@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,10 +33,6 @@ import Medium.DeFam.app.common.base.BaseDialogFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.AllUtils;
-import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.common.widget.flowlayout.FlowLayoutManager;
-import Medium.DeFam.app.common.widget.flowlayout.SpaceItemDecoration;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -138,7 +136,7 @@ public class JiFenDialogFragment extends BaseDialogFragment {
 
             }*/
             if (TextUtils.isEmpty(sku_price_id)) {
-                ToastUtil.initToast("请选择");
+                Toaster.show("请选择");
                 return;
             }
             getData();

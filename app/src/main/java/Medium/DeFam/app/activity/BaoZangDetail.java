@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
@@ -32,8 +33,6 @@ import Medium.DeFam.app.bean.MyMapBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
-import Medium.DeFam.app.common.utils.UserUtil;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -173,7 +172,7 @@ public class BaoZangDetail extends BaseActivity {
             ClipData mClipData = ClipData.newPlainText("Label", lian.getTag().toString());
             // 将ClipData内容放到系统剪贴板里。
             cm.setPrimaryClip(mClipData);
-            ToastUtil.initToast("复制成功");
+            Toaster.show("复制成功");
         } else if (id == R.id.fuzhi1) {
             //获取剪贴板管理器：
             ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -181,7 +180,7 @@ public class BaoZangDetail extends BaseActivity {
             ClipData mClipData = ClipData.newPlainText("Label", huizhi.getText().toString());
             // 将ClipData内容放到系统剪贴板里。
             cm.setPrimaryClip(mClipData);
-            ToastUtil.initToast("复制成功");
+            Toaster.show("复制成功");
         }else if (id == R.id.huizhiview) {
             Web.startWebActivity(this, "",  huizhi.getText().toString(), "", true);
 

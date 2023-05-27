@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.hjq.toast.Toaster;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
@@ -19,7 +20,6 @@ import java.io.InputStream;
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.utils.ImageUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.wx.interfaces.ShareListener;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -41,7 +41,7 @@ public class WxShareInstance {
     private static final int WX_THUMB_SIZE = 120;
 
     public WxShareInstance(Context context, String appId) {
-        mIWXAPI = WXAPIFactory.createWXAPI(context, appId, false);
+        mIWXAPI = WXAPIFactory.createWXAPI(context, appId);
         mIWXAPI.registerApp(appId);
     }
 
@@ -90,7 +90,7 @@ public class WxShareInstance {
                     .build();
             okHttpClient.newCall(request).enqueue(new Callback() {
                 public void onFailure(Call call, IOException e) {
-                    ToastUtil.initToast("图片下载失败");
+                    Toaster.show("图片下载失败");
                 }
 
                 public void onResponse(Call call, Response response) throws IOException {
@@ -145,23 +145,38 @@ public class WxShareInstance {
 
     }
 
-    //如果 不想关系分享回调结果 ShareListener可以为Null
+    /**
+     *
+     * @param platform
+     *  SendMessageToWX.Req.WXSceneSession是分享到好友会话
+     *  SendMessageToWX.Req.WXSceneTimeline是分享到朋友圈
+     * @param title
+     * @param content
+     * @param url
+     * @param bitmap
+     * @param activity
+     * @param shareListener
+     */
     public void shareWeb(int platform, String title, String content, String url, Bitmap bitmap,
                          Context activity, ShareListener shareListener) {
         this.mShareListener = shareListener;
+        if (mIWXAPI.isWXAppInstalled()) {
+            Toaster.show("您还没有安装微信");
+            return;
+        }
         //初始化一个WXWebpageObject对象，填写分享的网页地址
         WXWebpageObject webObject = new WXWebpageObject();
         webObject.webpageUrl = url;
         //对象初始化一个WXMediaMessage对象
         WXMediaMessage message = new WXMediaMessage(webObject);
-        message.title = title;//标题
+        message.title = "11111";//标题
         message.description = content;//描述
-        if (null == bitmap) {
+        /*if (null == bitmap) {
             bitmap = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
         }
         Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, WX_THUMB_SIZE, WX_THUMB_SIZE, true);
 //        bitmap.recycle();
-        message.thumbData = ImageUtil.bitmap2Bytes(thumbBmp);
+        message.setThumbImage(thumbBmp);*/
         sendMessage(platform, message, buildTransaction("webpage"));
     }
 
@@ -183,7 +198,8 @@ public class WxShareInstance {
         req.transaction = transaction;
         req.message = message;
         req.scene = platform;
-        mIWXAPI.sendReq(req);
+        boolean flag =  mIWXAPI.sendReq(req);
+        System.out.println(flag);
     }
 
     private String buildTransaction(String type) {

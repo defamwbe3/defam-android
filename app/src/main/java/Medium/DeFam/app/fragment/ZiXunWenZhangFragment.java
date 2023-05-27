@@ -1,7 +1,6 @@
 package Medium.DeFam.app.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
@@ -30,7 +29,6 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.Search;
 import Medium.DeFam.app.adapter.ImageAdapter;
 import Medium.DeFam.app.adapter.ViewPagerAdapter;
 import Medium.DeFam.app.bean.BannerBean;
@@ -39,12 +37,9 @@ import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.them.Eyes;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.ScaleTransitionPagerTitleView;
 import butterknife.BindView;
-import butterknife.OnClick;
 import me.jessyan.autosize.utils.AutoSizeUtils;
 
 

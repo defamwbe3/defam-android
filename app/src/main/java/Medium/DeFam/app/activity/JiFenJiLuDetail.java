@@ -1,33 +1,22 @@
 package Medium.DeFam.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.lzy.okgo.model.Response;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import net.lucode.hackware.magicindicator.MagicIndicator;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.JiFenJiLuBean;
 import Medium.DeFam.app.bean.JiFenJiLuDetailBean;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
-import butterknife.OnClick;
 
 
 public class JiFenJiLuDetail extends BaseActivity {

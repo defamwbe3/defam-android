@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 
-import com.lzy.okgo.model.Response;
+import com.hjq.toast.Toaster;
 
 import org.greenrobot.eventbus.EventBus;
 import org.json.JSONArray;
@@ -26,22 +26,17 @@ import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.PublishGridAdapter;
-import Medium.DeFam.app.bean.WenZhangBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.bean.MessageEvent;
-import Medium.DeFam.app.common.bean.UserBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.interfaces.OnUpdateImgListener;
-import Medium.DeFam.app.common.titlebar.CommonTitleBar;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UpdateImageUtil;
 import Medium.DeFam.app.common.widget.NoScrollGridView;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
-import butterknife.OnClick;
 
 
 public class GuanDianPut extends BaseActivity {
@@ -71,7 +66,7 @@ public class GuanDianPut extends BaseActivity {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(yijian.getText().toString())) {
-                    ToastUtil.initToast("请输入表你的观点");
+                    Toaster.show("请输入表你的观点");
                     return;
                 }
                 JSONArray jsonArray = new JSONArray();
@@ -79,7 +74,7 @@ public class GuanDianPut extends BaseActivity {
                     jsonArray.put(checkedItems.get(i));
                 }
                 if (jsonArray.length() == 0) {
-                    ToastUtil.initToast("请选择图片");
+                    Toaster.show("请选择图片");
                     return;
                 }
 
@@ -116,7 +111,7 @@ public class GuanDianPut extends BaseActivity {
                                     long arg3) {
                 if (arg2 == checkedItems.size()) {
                     if (checkedItems.size() >= 5) {
-                        ToastUtil.initToast("最多上传5张图片");
+                        Toaster.show("最多上传5张图片");
                         return;
                     }
                     UpdateImageUtil.getInstance().startSelector(GuanDianPut.this, "face", new OnUpdateImgListener() {

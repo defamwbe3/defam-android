@@ -8,29 +8,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.hjq.toast.Toaster;
 import com.lzy.okgo.model.Response;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.HuoDongDetail;
-import Medium.DeFam.app.adapter.HomeItemHuoDongAdapter;
 import Medium.DeFam.app.adapter.HuoDongShouCangAdapter;
 import Medium.DeFam.app.bean.HuoDongDetailBean;
-import Medium.DeFam.app.bean.ShouCangFaTieBean;
 import Medium.DeFam.app.bean.ShouCangHuoDongBean;
-import Medium.DeFam.app.bean.WenZhangBean;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
 
@@ -117,7 +112,7 @@ public class HuoDongShouCangFragment extends BaseFragment {
                 if (page > 1) {
                     refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
-                        ToastUtil.initToast("暂无更多数据");
+                        Toaster.show("暂无更多数据");
                         return;
                     }
                     adapter.addData(data.getData().getData());

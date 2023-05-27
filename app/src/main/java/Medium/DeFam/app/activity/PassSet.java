@@ -1,6 +1,5 @@
 package Medium.DeFam.app.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
@@ -10,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,13 +19,10 @@ import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.InfoBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
-import Medium.DeFam.app.common.bean.UserBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.ACache;
-import Medium.DeFam.app.common.utils.AllUtils;
-import Medium.DeFam.app.common.utils.ToastUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -86,7 +84,7 @@ public class PassSet extends BaseActivity {
         int id = v.getId();
         if (id == R.id.iv_yanzhengma) {
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号/邮箱");
+                Toaster.show("请输入手机号/邮箱");
                 return;
             }
 
@@ -109,20 +107,20 @@ public class PassSet extends BaseActivity {
             });
         } else if (id == R.id.ok) {
             if (TextUtils.isEmpty(phone.getText().toString())) {
-                ToastUtil.initToast("请输入手机号/邮箱");
+                Toaster.show("请输入手机号/邮箱");
                 return;
             }
 
             if (TextUtils.isEmpty(code.getText().toString())) {
-                ToastUtil.initToast("请输入请输入验证码");
+                Toaster.show("请输入请输入验证码");
                 return;
             }
             if (TextUtils.isEmpty(password.getText().toString())) {
-                ToastUtil.initToast("请输入新密码");
+                Toaster.show("请输入新密码");
                 return;
             }
             if (!password.getText().toString().equals(password_confirm.getText().toString())) {
-                ToastUtil.initToast("两次密码不一致");
+                Toaster.show("两次密码不一致");
                 return;
             }
             Map<String, String> map = new HashMap<>();
@@ -136,7 +134,7 @@ public class PassSet extends BaseActivity {
                     if (null == data || null == data.getData()) {
                         return;
                     }
-                    ToastUtil.initToast("修改成功");
+                    Toaster.show("修改成功");
                     finish();
                 }
 
