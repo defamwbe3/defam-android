@@ -1,3 +1,5 @@
+
+#友盟分享----------------------------
 -dontshrink
 -dontoptimize
 -dontwarn com.google.android.maps.**
@@ -19,9 +21,7 @@
 -keep public interface com.umeng.socialize.**
 -keep public interface com.umeng.socialize.sensor.**
 -keep public interface com.umeng.scrshot.**
-
 -keep public class com.umeng.socialize.* {*;}
-
 -keep class com.umeng.commonsdk.statistics.common.MLog {*;}
 -keep class com.umeng.commonsdk.UMConfigure {*;}
 -keep class com.umeng.** {*;}
@@ -69,7 +69,6 @@
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
-
 -keep class com.tencent.open.TDialog$*
 -keep class com.tencent.open.TDialog$* {*;}
 -keep class com.tencent.open.PKDialog
@@ -82,11 +81,9 @@
 -keep class  com.alipay.share.sdk.** {
    *;
 }
-
 -keepnames class * implements android.os.Parcelable {
     public static final ** CREATOR;
 }
-
 -keep class com.linkedin.** { *; }
 -keep class com.android.dingtalk.share.ddsharemodule.** { *; }
 -keepattributes Signature
