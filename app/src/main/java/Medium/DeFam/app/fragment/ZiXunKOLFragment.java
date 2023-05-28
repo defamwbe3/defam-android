@@ -89,6 +89,8 @@ public class ZiXunKOLFragment extends BaseFragment {
                 }else  if(1==type){
                     FenXiangDialogFragment fenXiangDialogFragment = new FenXiangDialogFragment();
                     Bundle bundle = new Bundle();
+                    bundle.putString("title","KOL言论");
+                    bundle.putString("content",data.getFull_text());
                     bundle.putString("action_id", data.getId());
                     bundle.putString("type","1");
                     bundle.putString("share_link",data.getHref());

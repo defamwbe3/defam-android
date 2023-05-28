@@ -20,9 +20,12 @@ import androidx.annotation.NonNull;
 
 
 import com.hjq.toast.Toaster;
+import com.king.zxing.Intents;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,6 +44,7 @@ import butterknife.OnClick;
 
 public class FenXiangDialogFragment extends BaseDialogFragment {
     private Context mContext;
+    private String title,content;
     private String type, action_id,share_link;
     private WxShareInstance wxShare;
     @NonNull
@@ -66,6 +70,8 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
 
     private void initData() {
         if (getArguments() != null) {
+            title = getArguments().getString("title","");
+            content = getArguments().getString("content","");
             type = getArguments().getString("type");
             action_id = getArguments().getString("action_id");
             share_link = getArguments().getString("share_link");
@@ -105,8 +111,25 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
                 }
             });
         } else if (id == R.id.weixin) {
-            new ShareAction(getActivity()).setPlatform(SHARE_MEDIA.WEIXIN)
-                    .setCallback(shareListener).withText(share_link).share();
+            ShareAction shareAction = new ShareAction(getActivity());
+            shareAction.setPlatform(SHARE_MEDIA.WEIXIN);
+            shareAction.setCallback(shareListener);
+            if(TextUtils.isEmpty(title) && TextUtils.isEmpty(content)){
+                shareAction.withText(share_link);
+            }else{
+                UMWeb web = new UMWeb(share_link);
+                if(!TextUtils.isEmpty(title)){
+                    web.setTitle(title);
+                }
+                if(!TextUtils.isEmpty(content)){
+                    web.setDescription(content);
+                }
+                UMImage thumb = new UMImage(mContext,R.mipmap.ic_launcher);
+                web.setThumb(thumb);
+                shareAction.withMedia(web);
+            }
+            shareAction.share();
+
         }/*else if (stringList.get(position).equals("朋友圈")) {
             if (!isWeixinAvilible(context)) {
                 ToastUtil.show("未检测到微信");

@@ -35,9 +35,7 @@ dependencies {
     //okHttp网络请求
     api 'com.lzy.net:okgo:3.0.4'//OkGo 是对okHttp的封装
     api 'com.lzy.net:okserver:2.0.5'//OkGo上传下载扩展库
-    //api 'com.alibaba:fastjson:1.1.70.android'//fastJson解析json
     api 'com.github.bumptech.glide:glide:4.14.2' //使用Glide加载图片
-    //annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     //api "com.github.bumptech.glide:avif-integration:4.13.2"
     api 'com.just.agentweb:agentweb:4.0.2'
     api 'top.zibin:Luban:1.1.8'
