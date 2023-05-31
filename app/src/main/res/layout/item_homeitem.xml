@@ -45,7 +45,6 @@
                     android:textSize="@dimen/dp_11"
                     android:textColor="#CC1919"
                     android:text="置顶"
-                    android:layout_marginRight="@dimen/dp_10"
                     android:background="@drawable/r_hongxian"/>
                 <TextView
                     android:id="@+id/comments"
@@ -53,7 +52,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="#999999"
                     android:textSize="@dimen/dp_12"
-                    android:text="70评论"/>
+                    android:text="70评论"
+                    android:layout_marginLeft="10dp"/>
                 <TextView
                     android:id="@+id/created_at"
                     android:layout_width="wrap_content"

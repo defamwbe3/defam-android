@@ -99,8 +99,11 @@ public class ExpandKOLView1 extends LinearLayout {
             });
             contentText.setMaxLines(Integer.MAX_VALUE);
 
-            contentText.setText(alldata.getMain_text().getFull_text());
-
+            if(alldata.getMain_text()!=null){
+                contentText.setText(alldata.getMain_text().getFull_text());
+            }else{
+                contentText.setText("");
+            }
 
         } else {
             //如果之前已经初始化过了，则使用保存的状态。

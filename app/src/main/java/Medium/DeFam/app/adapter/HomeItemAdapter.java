@@ -183,6 +183,7 @@ public class HomeItemAdapter extends RecyclerView.Adapter {
             title = view.findViewById(R.id.title);
             is_top = view.findViewById(R.id.is_top);
             comments = view.findViewById(R.id.comments);
+            comments.setVisibility(View.GONE);
             created_at = view.findViewById(R.id.created_at);
             img = view.findViewById(R.id.img);
         }
@@ -199,6 +200,7 @@ public class HomeItemAdapter extends RecyclerView.Adapter {
             title = view.findViewById(R.id.title);
             is_top = view.findViewById(R.id.is_top);
             comments = view.findViewById(R.id.comments);
+            comments.setVisibility(View.GONE);
             created_at = view.findViewById(R.id.created_at);
             img = view.findViewById(R.id.img);
             img1 = view.findViewById(R.id.img1);
