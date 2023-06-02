@@ -73,10 +73,10 @@ public class GuanDianPut extends BaseActivity {
                 for (int i = 0, a = checkedItems.size(); i < a; i++) {
                     jsonArray.put(checkedItems.get(i));
                 }
-                if (jsonArray.length() == 0) {
+                /*if (jsonArray.length() == 0) {
                     Toaster.show("请选择图片");
                     return;
-                }
+                }*/
 
                 Map<String, String> map = new HashMap<>();
                 map.put("content", yijian.getText().toString());
