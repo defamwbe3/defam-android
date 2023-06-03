@@ -14,7 +14,9 @@ import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.scwang.smart.refresh.layout.api.RefreshLayout;
 import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
@@ -108,7 +110,7 @@ public class HomeItemFragment extends BaseFragment {
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 page = 1;
                 getData();
-                getHotData();
+//                getHotData();
             }
         });
         adapter = new HomeItemAdapter(getContext());
@@ -123,7 +125,7 @@ public class HomeItemFragment extends BaseFragment {
         recyclerView.setAdapter(adapter);
         if (load) {
             getData();
-            getHotData();
+//            getHotData();
         }
     }
 
@@ -146,9 +148,9 @@ public class HomeItemFragment extends BaseFragment {
         HttpClient.getInstance().gets(HttpUtil.INDEXREALINFO, map, new TradeHttpCallback<JsonBean<ZiXunBean>>() {
             @Override
             public void onSuccess(JsonBean<ZiXunBean> data) {
+                refreshLayout.finishRefresh();
+                refreshLayout.finishLoadMore();
                 if (null == data || null == data.getData()) {
-                    refreshLayout.finishRefresh();
-                    refreshLayout.finishLoadMore();
                     return;
                 }
                 if (page > 1) {
@@ -159,9 +161,21 @@ public class HomeItemFragment extends BaseFragment {
                     }
                     adapter.addData(data.getData().getData());
                 } else {
-                    not.setVisibility(data.getData().getData().size() > 0 ? View.GONE : View.VISIBLE);
-                    refreshLayout.finishRefresh();
-                    adapter.replaceAll(data.getData().getData());
+                    List<ZiXunDetailBean> list = data.getData().getData();
+                    //取前面4条记录当做精选
+                    if(list.size()>4){
+                        List<ZiXunDetailBean> hotList = new ArrayList<>();
+                        not.setVisibility(View.GONE);
+                        for(int i=0;i<4;i++){
+                            hotList.add(list.remove(0));
+                        }
+                        homeHotAdapter.replaceAll(hotList);
+                    }else{
+                        not.setVisibility(View.VISIBLE);
+                        homeHotAdapter.replaceAll(list);
+                        list.clear();
+                    }
+                    adapter.replaceAll(list);
                 }
                 page++;
             }

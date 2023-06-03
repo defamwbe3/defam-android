@@ -10,7 +10,7 @@
         android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_45"
+            android:layout_height="@dimen/dp_40"
             android:gravity="center"
             android:textSize="@dimen/dp_18"
             android:textColor="#333333"
@@ -41,7 +41,7 @@
                             android:id="@+id/banner"
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
-                            android:layout_marginTop="@dimen/dp_8"
+                            android:layout_marginTop="@dimen/dp_5"
                             app:banner_auto_loop="true"
                             app:banner_indicator_normal_color="@color/color_C8CAF0"
                             app:banner_indicator_normal_width="6dp"

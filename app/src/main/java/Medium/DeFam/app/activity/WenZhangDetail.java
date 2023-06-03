@@ -274,6 +274,8 @@ public class WenZhangDetail extends BaseActivity {
         } else if (id == R.id.fenxiang) {
             FenXiangDialogFragment fenXiangDialogFragment = new FenXiangDialogFragment();
             Bundle bundle = new Bundle();
+            bundle.putString("title",alldata.getTitle());
+            bundle.putString("content",alldata.getContent());
             bundle.putString("action_id", alldata.getId());
             bundle.putString("type", "2");
             bundle.putString("share_link", alldata.getShare_link());

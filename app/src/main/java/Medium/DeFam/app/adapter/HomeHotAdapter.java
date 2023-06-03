@@ -41,12 +41,7 @@ public class HomeHotAdapter extends RecyclerView.Adapter<HomeHotAdapter.ViewHold
 
     public void replaceAll(List<ZiXunDetailBean> list) {
         dataList.clear();
-        if (list != null && list.size() > 0) {
-            for(int i=0;i<4;i++){
-                dataList.add(list.get(i));
-            }
-//            dataList.addAll(list);
-        }
+        dataList.addAll(list);
         notifyDataSetChanged();
     }
 
