@@ -18,9 +18,7 @@ import android.view.Window;
 
 import androidx.annotation.NonNull;
 
-
 import com.hjq.toast.Toaster;
-import com.king.zxing.Intents;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
