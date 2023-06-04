@@ -132,7 +132,12 @@ public class QuanZiAdapter extends RecyclerView.Adapter<QuanZiAdapter.ViewHolder
         GlideUtil.showImg(context, data.getMember().getAvatar(), holder.avatar);
         holder.nickname.setText(data.getMember().getNickname());
         holder.created_at.setText(AllUtils.getTimeFormatText(data.getCreated_at()));
-        holder.is_follow.setVisibility(data.getMember_id().equals(UserUtil.getUserBean().getId()) ? View.GONE : View.VISIBLE);
+        if(UserUtil.getUserBean()!=null){
+            holder.is_follow.setVisibility(data.getMember_id().equals(UserUtil.getUserBean().getId()) ? View.GONE : View.VISIBLE);
+        }else{
+            holder.is_follow.setVisibility(View.VISIBLE);
+        }
+
         holder.is_follow.setImageResource("0".equals(data.getIs_follow()) ? R.mipmap.img14 : R.mipmap.img15);
         holder.is_follow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +145,11 @@ public class QuanZiAdapter extends RecyclerView.Adapter<QuanZiAdapter.ViewHolder
                 Map<String, String> map = new HashMap<>();
                 map.put("to_member_id", data.getMember().getId());
                 map.put("type", "1");
-                map.put("member_id", UserUtil.getUserBean().getId());
+                if(UserUtil.getUserBean()!=null){
+                    map.put("member_id","");
+                }else{
+                    map.put("member_id", UserUtil.getUserBean().getId());
+                }
                 HttpClient.getInstance().gets(HttpUtil.ISFOLLOWMEMBER, map, new TradeHttpCallback<JsonBean<String>>() {
                     @Override
                     public void onSuccess(JsonBean<String> urldata) {

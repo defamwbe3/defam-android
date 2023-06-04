@@ -132,9 +132,6 @@ public class ZiXunKuaiXunFragment extends BaseFragment {
     }
 
     private void useBanner() {
-        if(!isLogined()){
-            return;
-        }
         Map<String, String> map = new HashMap<>();
         map.put("code", "realinfo");
         HttpClient.getInstance().gets(HttpUtil.BANNER, map, new TradeHttpCallback<JsonBean<BannerBean>>() {
@@ -149,9 +146,6 @@ public class ZiXunKuaiXunFragment extends BaseFragment {
     }
 
     private void getCategory() {
-        if(!isLogined()){
-            return;
-        }
         HttpClient.getInstance().gets(HttpUtil.REALINFOCATEGORY, null, new TradeHttpCallback<JsonBean<CategoryBean>>() {
             @Override
             public void onSuccess(JsonBean<CategoryBean> data) {

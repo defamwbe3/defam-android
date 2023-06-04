@@ -95,7 +95,13 @@ public class TabButtonGroup extends LinearLayout implements View.OnClickListener
             if (position == mCurPosition) {
                 return;
             }
-            if (4 == position || 3 == position || 2 == position || 1 == position) {//未登录状态
+            /*if (4 == position || 3 == position || 2 == position || 1 == position) {//未登录状态
+                if (null == UserUtil.getUserBean() || TextUtils.isEmpty(UserUtil.getUserBean().getToken())) {
+                    ActivityRouter.startActivity(mcontext, ActivityRouter.Mall.MALL_LOGIN);
+                    return;
+                }
+            }*/
+            if (4 == position) {//未登录状态
                 if (null == UserUtil.getUserBean() || TextUtils.isEmpty(UserUtil.getUserBean().getToken())) {
                     ActivityRouter.startActivity(mcontext, ActivityRouter.Mall.MALL_LOGIN);
                     return;

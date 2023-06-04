@@ -107,9 +107,9 @@ public class HomeItemHuoDongFragment extends BaseFragment {
     }
 
     private void getData() {
-        if (!isLogined()) {
+       /* if (!isLogined()) {
             return;
-        }
+        }*/
         Map<String, String> map = new HashMap<>();
         map.put("page", page + "");
         map.put("status", status);

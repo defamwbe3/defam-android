@@ -410,7 +410,9 @@ public class HuoDongDetail extends BaseActivity {
                 }
             }));
         }
-        name.setText(alldata.getLink().getName());
+        if(alldata.getLink()!=null){
+            name.setText(alldata.getLink().getName());
+        }
         special.setText(TextUtils.isEmpty(alldata.getSpecial())?"暂无":alldata.getSpecial());
         if ("0".equals(alldata.getIs_registered())) {
             baoming.setBackgroundResource(R.drawable.r_lan50);

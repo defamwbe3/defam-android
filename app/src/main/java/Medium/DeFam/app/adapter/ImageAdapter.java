@@ -54,7 +54,7 @@ public class ImageAdapter extends BannerAdapter<BannerBean.DataBean, ImageAdapte
                 ViewGroup.LayoutParams.MATCH_PARENT));
         int padd = ScreenUtils.dp2PxInt(mContext,10);
         imageView.setPadding(padd,0,padd,0);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         return new ImageHolder(imageView);
     }
 

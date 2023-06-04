@@ -123,9 +123,9 @@ public class QuanZiFragment extends BaseFragment {
     }
 
     private void getData() {
-        if(!isLogined()){
+        /*if(!isLogined()){
             return;
-        }
+        }*/
         Map<String, String> map = new HashMap<>();
         map.put("page", page + "");
         map.put("type", "short");
@@ -133,13 +133,12 @@ public class QuanZiFragment extends BaseFragment {
         HttpClient.getInstance().gets(HttpUtil.APIARTICLE, map, new TradeHttpCallback<JsonBean<WenZhangBean>>() {
             @Override
             public void onSuccess(JsonBean<WenZhangBean> data) {
+                refreshLayout.finishRefresh();
+                refreshLayout.finishLoadMore();
                 if (null == data || null == data.getData()) {
-                    refreshLayout.finishRefresh();
-                    refreshLayout.finishLoadMore();
                     return;
                 }
                 if (page > 1) {
-                    refreshLayout.finishLoadMore();
                     if (data.getData().getData().size() == 0) {
                         Toaster.show("暂无更多数据");
                         return;

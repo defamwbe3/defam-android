@@ -1,10 +1,13 @@
 package Medium.DeFam.app.common.http;
 
+import android.text.TextUtils;
+
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.callback.Callback;
 import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.MemoryCookieStore;
+import com.lzy.okgo.request.GetRequest;
 
 import Medium.DeFam.app.common.CommonAppContext;
 import Medium.DeFam.app.common.Constants;
@@ -74,9 +77,11 @@ public class HttpClient {
     }
 
     public <T> void gets(String serviceName, Map<String, String> map, TradeHttpCallback<T> callback) {
-        OkGo.<T>get(mUrl + serviceName)
-                .headers("Authorization", "Bearer " + UserUtil.getToken())
-                .tag(serviceName)
+        GetRequest request = OkGo.<T>get(mUrl + serviceName);
+        if(!TextUtils.isEmpty(UserUtil.getToken())){
+            request.headers("Authorization", "Bearer " + UserUtil.getToken());
+        }
+        request.tag(serviceName)
                 .params(map)
                 .execute(callback);
     }

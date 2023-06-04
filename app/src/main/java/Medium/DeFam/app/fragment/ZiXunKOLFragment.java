@@ -108,9 +108,6 @@ public class ZiXunKOLFragment extends BaseFragment {
     }
 
     private void useBanner() {
-        if (!isLogined()) {
-            return;
-        }
         Map<String, String> map = new HashMap<>();
         map.put("code", "realinfo");
         HttpClient.getInstance().gets(HttpUtil.BANNER, map, new TradeHttpCallback<JsonBean<BannerBean>>() {
