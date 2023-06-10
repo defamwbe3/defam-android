@@ -77,7 +77,7 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
 
     }
 
-    @OnClick({R.id.fuzhi, R.id.quxiao, R.id.weixin})
+    @OnClick({R.id.fuzhi, R.id.quxiao, R.id.weixin,R.id.pyq})
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.quxiao) {
@@ -128,22 +128,26 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
             }
             shareAction.share();
 
-        }/*else if (stringList.get(position).equals("朋友圈")) {
-            if (!isWeixinAvilible(context)) {
-                ToastUtil.show("未检测到微信");
-                return;
+        }else if (id == R.id.pyq) {
+            ShareAction shareAction = new ShareAction(getActivity());
+            shareAction.setPlatform(SHARE_MEDIA.WEIXIN_CIRCLE);
+            shareAction.setCallback(shareListener);
+            if(TextUtils.isEmpty(title) && TextUtils.isEmpty(content)){
+                shareAction.withText(share_link);
+            }else{
+                UMWeb web = new UMWeb(share_link);
+                if(!TextUtils.isEmpty(title)){
+                    web.setTitle(title);
+                }
+                if(!TextUtils.isEmpty(content)){
+                    web.setDescription(content);
+                }
+                UMImage thumb = new UMImage(mContext,R.mipmap.ic_launcher);
+                web.setThumb(thumb);
+                shareAction.withMedia(web);
             }
-            //share2WX(SendMessageToWX.Req.WXSceneTimeline);
-            Observable.just(true).doOnNext(aBoolean -> {
-                GlideUtil.showImg(context, alldata.getGoods_rs().getImage(), null, bmt -> {//下载成功 后替换
-                    if (null != bmt) {
-                        //Log.i("zmh",HttpMethods.BASE_SITE + "/wyapi.php?g=wyapi&c=AppDownload&a=index&share_uid="+AppContext.getInstance().getAccount().getUid());
-                        wxShare.shareImg(SendMessageToWX.Req.WXSceneTimeline, "龙莱商城", alldata.getGoods_rs().getName(), alldata.getGoods_rs().getImage(), bmt, context, shareListener);
-                    }
-                });
-            }).subscribeOn(AndroidSchedulers.mainThread()).observeOn(AndroidSchedulers.mainThread()).subscribe();
-
-        }*/
+            shareAction.share();
+        }
     }
 
 
