@@ -14,13 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.ZiXunBean;
 import Medium.DeFam.app.bean.ZiXunDetailBean;
-import Medium.DeFam.app.common.utils.AllUtils;
 import Medium.DeFam.app.common.utils.GlideUtil;
 
 public class HomeItemAdapter extends RecyclerView.Adapter {
@@ -117,7 +118,7 @@ public class HomeItemAdapter extends RecyclerView.Adapter {
                 vh.title.setText(data.getTitle());
                 vh.is_top.setVisibility("1".equals(data.getIs_top()) ? View.VISIBLE : View.GONE);
                 vh.comments.setText(data.getComments() + "评论");
-                vh.created_at.setText(AllUtils.getTimeFormatText(data.getCreated_at()));
+                vh.created_at.setText(formatDate(data.getCreated_at()));
                 if (null != data.getImage_text() && data.getImage_text().size() > 0) {
                     vh.img.setVisibility(View.VISIBLE);
                     GlideUtil.showImg(context, data.getImage_text().get(0), vh.img);
@@ -137,7 +138,7 @@ public class HomeItemAdapter extends RecyclerView.Adapter {
                 vh1.title.setText(data.getTitle());
                 vh1.is_top.setVisibility("1".equals(data.getIs_top()) ? View.VISIBLE : View.GONE);
                 vh1.comments.setText(data.getComments() + "评论");
-                vh1.created_at.setText(AllUtils.getTimeFormatText(data.getCreated_at()));
+                vh1.created_at.setText(formatDate(data.getCreated_at()));
                 vh1.img.setVisibility(View.INVISIBLE);
                 vh1.img1.setVisibility(View.INVISIBLE);
                 vh1.img2.setVisibility(View.INVISIBLE);
@@ -206,6 +207,20 @@ public class HomeItemAdapter extends RecyclerView.Adapter {
             img1 = view.findViewById(R.id.img1);
             img2 = view.findViewById(R.id.img2);
         }
+    }
+
+    private String formatDate(String datestr){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        try {
+            date = sdf.parse(datestr);
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        long millis = date.getTime();
+        return String.format("%tF", millis);
     }
 }
 
