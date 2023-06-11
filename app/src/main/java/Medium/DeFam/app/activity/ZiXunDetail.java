@@ -92,7 +92,7 @@ public class ZiXunDetail extends BaseActivity {
 
     @Override
     protected boolean isNeedLogin() {
-        return true;
+        return false;
     }
 
     @Override
