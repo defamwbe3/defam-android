@@ -68,7 +68,7 @@ public class AllUtils {
         }
 
         long millis = date.getTime();
-        long now = System.currentTimeMillis();
+        /*long now = System.currentTimeMillis();
         long span = now - millis;
         if (span < 0)
             // U can read http://www.apihome.cn/api/java/Formatter.html to understand it.
@@ -88,8 +88,8 @@ public class AllUtils {
             return String.format("昨天%tR", millis);
         } else {
             return String.format("%tF", millis);
-        }
-
+        }*/
+        return String.format("%tF", millis);
     }
 
     private static long getWeeOfToday() {
