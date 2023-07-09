@@ -95,7 +95,7 @@ public class JiFenAdapter extends BaseAdapter {
         }
         JiFenDetailBean mEntity = dataList.get(position);
         GlideUtil.showImg(context,mEntity.getImage(),holder.image);
-        holder.price.setText(mEntity.getPrice()+"积分");
+        holder.price.setText(mEntity.getPrice()+"DD");
         holder.sale_num.setText("已兑:"+mEntity.getSale_num());
         holder.name.setText(mEntity.getName());
         holder.itemview.setOnClickListener(new View.OnClickListener() {

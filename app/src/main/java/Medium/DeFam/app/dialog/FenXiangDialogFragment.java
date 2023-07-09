@@ -98,7 +98,7 @@ public class FenXiangDialogFragment extends BaseDialogFragment {
                     Toaster.show("复制成功");
                     dismiss();
                     if(!TextUtils.isEmpty(data.getData().getPoint())&&Integer.parseInt(data.getData().getPoint())>0){
-                        JiFenDialog payDialog = new JiFenDialog(mContext,"分享成功获得"+data.getData().getPoint()+"积分");
+                        JiFenDialog payDialog = new JiFenDialog(mContext,"分享成功获得"+data.getData().getPoint()+"DD");
                         payDialog.show();
                     }
                 }

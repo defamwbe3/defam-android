@@ -105,7 +105,7 @@ public class MyFragment extends BaseFragment {
                 level.setText("Lv." + data.getData().getLevel());
                 GlideUtil.showImg(getActivity(), data.getData().getAvatar(), avatar);
                 nickname.setText(data.getData().getNickname());
-                integral.setText("积分：" + data.getData().getIntegral());
+                integral.setText("DD：" + data.getData().getIntegral());
                 suipian_total.setText("碎片：" + data.getData().getSuipian_total());
                 fans_num.setText(data.getData().getFans_num());
                 follow_num.setText(data.getData().getFollow_num());

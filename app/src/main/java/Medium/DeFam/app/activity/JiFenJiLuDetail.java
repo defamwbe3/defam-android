@@ -84,7 +84,7 @@ public class JiFenJiLuDetail extends BaseActivity {
         status_name.setText(alldata.getStatus_name());
         GlideUtil.showImg(JiFenJiLuDetail.this, alldata.getGoods().get(0).getGoods_image(), goods_image);
         goods_name.setText(alldata.getGoods().get(0).getGoods_name());
-        integral.setText(alldata.getGoods().get(0).getPrice() + "积分");
+        integral.setText(alldata.getGoods().get(0).getPrice() + "DD");
         order_no.setText(alldata.getOrder_no());
         pay_type_name.setText(alldata.getPay_type_name());
         paid_at.setText(alldata.getPaid_at());

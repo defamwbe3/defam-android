@@ -120,7 +120,7 @@ public class JiFenJiLuAdapter extends BaseAdapter {
         holder.status.setText(mEntity.getStatus_name());
         GlideUtil.showImg(context,mEntity.getGoods().get(0).getGoods_image(),holder.goods_image);
         holder.goods_name.setText(mEntity.getGoods().get(0).getGoods_name());
-        holder.integral.setText(mEntity.getGoods().get(0).getPrice()+"积分");
+        holder.integral.setText(mEntity.getGoods().get(0).getPrice()+"DD");
         return convertView;
     }
 

@@ -288,7 +288,7 @@ public class ZiXunDetail extends BaseActivity {
                         return;
                     }
                     if(!TextUtils.isEmpty(data.getData().getPoint())&&Integer.parseInt(data.getData().getPoint())>0){
-                        JiFenDialog payDialog = new JiFenDialog(ZiXunDetail.this,"点赞成功获得"+data.getData().getPoint()+"积分");
+                        JiFenDialog payDialog = new JiFenDialog(ZiXunDetail.this,"点赞成功获得"+data.getData().getPoint()+"DD");
                         payDialog.show();
                     }
 

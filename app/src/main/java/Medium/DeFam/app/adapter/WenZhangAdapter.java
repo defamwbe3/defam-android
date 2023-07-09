@@ -261,7 +261,7 @@ public class WenZhangAdapter extends RecyclerView.Adapter<WenZhangAdapter.ViewHo
                             return;
                         }
                         if(!TextUtils.isEmpty(urldata.getData().getPoint())&&Integer.parseInt(urldata.getData().getPoint())>0){
-                            JiFenDialog payDialog = new JiFenDialog(context,"点赞成功获得"+urldata.getData().getPoint()+"积分");
+                            JiFenDialog payDialog = new JiFenDialog(context,"点赞成功获得"+urldata.getData().getPoint()+"DD");
                             payDialog.show();
                         }
                         if ("0".equals(data.getIs_good())) {

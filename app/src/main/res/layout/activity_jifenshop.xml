@@ -8,7 +8,7 @@
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        titlebar:centerText="积分商城"
+        titlebar:centerText="DD集市"
         titlebar:rightText="兑换记录"
         titlebar:fillStatusBar="true" />
     <Medium.DeFam.app.common.widget.SmartRefreshView

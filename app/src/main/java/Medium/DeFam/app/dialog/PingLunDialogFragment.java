@@ -184,7 +184,7 @@ public class PingLunDialogFragment extends BaseDialogFragment {
                     }
                     content.setText("");
                     if(!TextUtils.isEmpty(data.getData().getPoint())&&Integer.parseInt(data.getData().getPoint())>0){
-                        JiFenDialog payDialog = new JiFenDialog(getActivity(),"评论成功获得"+data.getData().getPoint()+"积分");
+                        JiFenDialog payDialog = new JiFenDialog(getActivity(),"评论成功获得"+data.getData().getPoint()+"DD");
                         payDialog.show();
                     }
                     page = 1;

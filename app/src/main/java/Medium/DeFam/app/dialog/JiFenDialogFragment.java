@@ -88,7 +88,7 @@ public class JiFenDialogFragment extends BaseDialogFragment {
         } else {
             not.setVisibility(View.GONE);
             productView.setVisibility(View.VISIBLE);
-            price.setText(alldata.getPrice() + "积分");
+            price.setText(alldata.getPrice() + "DD");
 
             setPrice();
             productView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -119,7 +119,7 @@ public class JiFenDialogFragment extends BaseDialogFragment {
         }
         for (int i = 0, a = alldata.getSku_price().size(); i < a; i++) {
             if (goods_sku_ids.equals(alldata.getSku_price().get(i).getGoods_sku_ids())) {
-                price.setText(alldata.getSku_price().get(i).getPrice() + "积分");
+                price.setText(alldata.getSku_price().get(i).getPrice() + "DD");
                 sku_price_id = alldata.getSku_price().get(i).getId();
                 break;
             }

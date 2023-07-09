@@ -25,7 +25,7 @@
                 android:id="@+id/type_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="积分兑换商品"
+                android:text="DD兑换商品"
                 android:textColor="#373748"
                 android:textSize="@dimen/dp_14" />
 

@@ -93,7 +93,7 @@
                             android:paddingHorizontal="@dimen/dp_8"
                             android:textSize="@dimen/dp_11"
                             android:textColor="@color/white"
-                            android:text="积分：0"
+                            android:text="DD：0"
                             android:background="@drawable/r_lv"/>
                         <TextView
                             android:id="@+id/suipian_total"
@@ -240,7 +240,7 @@
                         android:layout_weight="1"
                         android:textSize="@dimen/dp_14"
                         android:textColor="#373748"
-                        android:text="积分商城"
+                        android:text="DD集市"
                         android:layout_marginLeft="@dimen/dp_10"/>
                     <ImageView
                         android:layout_width="@dimen/dp_20"

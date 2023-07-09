@@ -317,7 +317,7 @@ public class HuoDongDetail extends BaseActivity {
                         return;
                     }
                     if(!TextUtils.isEmpty(data.getData().getPoint())&&Integer.parseInt(data.getData().getPoint())>0){
-                        JiFenDialog payDialog = new JiFenDialog(HuoDongDetail.this,"点赞成功获得"+data.getData().getPoint()+"积分");
+                        JiFenDialog payDialog = new JiFenDialog(HuoDongDetail.this,"点赞成功获得"+data.getData().getPoint()+"DD");
                         payDialog.show();
                     }
                     if ("0".equals(is_good.getTag())) {

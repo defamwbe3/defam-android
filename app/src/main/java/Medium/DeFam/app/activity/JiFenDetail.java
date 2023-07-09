@@ -175,7 +175,7 @@ public class JiFenDetail extends BaseActivity {
                 .setIndicator(new CircleIndicator(JiFenDetail.this));
         name.setText(alldata.getName());
         sale_num.setText("已兑:" + alldata.getSale_num());
-        integral.setText(alldata.getPrice() + "积分");
+        integral.setText(alldata.getPrice() + "DD");
         web.loadDataWithBaseURL(Constants.HOST, HTML_STYLE + alldata.getDetail(), "text/html",
                 "utf-8", null);
     }

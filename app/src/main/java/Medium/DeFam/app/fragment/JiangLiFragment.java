@@ -144,7 +144,7 @@ public class JiangLiFragment extends BaseFragment {
             HttpClient.getInstance().gets(HttpUtil.AGREEMENT, map, new TradeHttpCallback<JsonBean<String>>() {
                 @Override
                 public void onSuccess(JsonBean<String> data) {
-                    Web.startWebActivity(getActivity(), "积分规则", "", data.getData());
+                    Web.startWebActivity(getActivity(), "DD规则", "", data.getData());
 
                 }
 
