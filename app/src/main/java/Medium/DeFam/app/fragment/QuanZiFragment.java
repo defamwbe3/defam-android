@@ -107,7 +107,7 @@ public class QuanZiFragment extends BaseFragment {
                 }else  if(1==type){
                     FenXiangDialogFragment fenXiangDialogFragment = new FenXiangDialogFragment();
                     Bundle bundle = new Bundle();
-                    bundle.putString("title", TextUtils.isEmpty(data.getTitle())?"Defam圈子分享":data.getTitle());
+                    bundle.putString("title", TextUtils.isEmpty(data.getTitle())?"圈子分享":data.getTitle());
                     bundle.putString("content",data.getContent());
                     bundle.putString("action_id", data.getId());
                     bundle.putString("type","1");
