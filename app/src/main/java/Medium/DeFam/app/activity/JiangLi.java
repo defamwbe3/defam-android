@@ -43,7 +43,7 @@ public class JiangLi extends BaseActivity {
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     private ArrayList<Fragment> fragmentList = new ArrayList<>();
-    private String[] toptitle = {"我的积分", "我的碎片"};
+    private String[] toptitle = {"我的DD", "我的碎片"};
 
     @Override
     protected boolean isNeedLogin() {
