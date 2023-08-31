@@ -3,9 +3,12 @@ package Medium.DeFam.app.common.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
+import android.os.IBinder;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+
+import java.lang.reflect.Field;
 
 public class ScreenUtils {
 
@@ -72,10 +75,10 @@ public class ScreenUtils {
 
     public static void hideSoftInputKeyBoard(Context context, View focusView) {
         if (focusView != null) {
-            InputMethodManager imm = (InputMethodManager) focusView.getContext()
-                    .getSystemService(Context.INPUT_METHOD_SERVICE);
-            if (imm != null) {
-                imm.hideSoftInputFromWindow(focusView.getWindowToken(),0);
+            IBinder binder = focusView.getWindowToken();
+            if (binder != null) {
+                InputMethodManager imd = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imd.hideSoftInputFromWindow(binder, InputMethodManager.HIDE_IMPLICIT_ONLY);
             }
         }
     }
@@ -89,18 +92,27 @@ public class ScreenUtils {
         return context.getResources().getDisplayMetrics().widthPixels;
     }
 
-    public static int getScreenWidthDP(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        return dm.widthPixels/dm.densityDpi;
-    }
-
     public static int getScreenHeight(Context context) {
         return context.getResources().getDisplayMetrics().heightPixels;
     }
 
-    public static int getScreenHeightDP(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        return dm.heightPixels/dm.densityDpi;
+    public static int getStatusBarHeight(Context context) {
+        int statusBarHeight = 0;
+        try {
+            Class<?> c = Class.forName("com.android.internal.R$dimen");
+            Object obj = c.newInstance();
+            Field field = c.getField("status_bar_height");
+            int x = Integer.parseInt(field.get(obj).toString());
+            statusBarHeight = context.getResources().getDimensionPixelSize(x);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
+        return statusBarHeight;
     }
+
+    public static int getAppInScreenheight(Context context) {
+        return getScreenHeight(context) - getStatusBarHeight(context);
+    }
+
 
 }

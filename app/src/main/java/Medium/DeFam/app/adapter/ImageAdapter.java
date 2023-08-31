@@ -2,8 +2,6 @@ package Medium.DeFam.app.adapter;
 
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,7 +14,6 @@ import com.youth.banner.adapter.BannerAdapter;
 
 import java.util.List;
 
-import Medium.DeFam.app.R;
 import Medium.DeFam.app.activity.Web;
 import Medium.DeFam.app.bean.BannerBean;
 import Medium.DeFam.app.common.utils.GlideUtil;

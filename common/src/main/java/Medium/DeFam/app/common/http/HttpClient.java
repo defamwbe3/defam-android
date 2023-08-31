@@ -9,16 +9,15 @@ import com.lzy.okgo.cookie.CookieJarImpl;
 import com.lzy.okgo.cookie.store.MemoryCookieStore;
 import com.lzy.okgo.request.GetRequest;
 
-import Medium.DeFam.app.common.CommonAppContext;
-import Medium.DeFam.app.common.Constants;
-import Medium.DeFam.app.common.utils.UserUtil;
-
 import org.json.JSONObject;
 
 import java.io.File;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import Medium.DeFam.app.common.CommonAppContext;
+import Medium.DeFam.app.common.Constants;
+import Medium.DeFam.app.common.utils.UserUtil;
 import okhttp3.Dispatcher;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;

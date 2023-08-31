@@ -5,7 +5,6 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,23 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.FenSiBean;
 import Medium.DeFam.app.bean.GongGaoBean;
-import Medium.DeFam.app.common.http.HttpClient;
-import Medium.DeFam.app.common.http.JsonBean;
-import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.UserUtil;
-import Medium.DeFam.app.utils.HttpUtil;
-
 
 
 public class GongGaoAdapter extends RecyclerView.Adapter<GongGaoAdapter.ViewHolder> {

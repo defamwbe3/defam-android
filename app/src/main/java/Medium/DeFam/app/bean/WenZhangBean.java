@@ -1,6 +1,5 @@
 package Medium.DeFam.app.bean;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class WenZhangBean {

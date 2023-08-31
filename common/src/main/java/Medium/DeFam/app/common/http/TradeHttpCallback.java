@@ -13,13 +13,6 @@ import com.lzy.okgo.model.Progress;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
 
-import Medium.DeFam.app.common.ActivityRouter;
-import Medium.DeFam.app.common.R;
-import Medium.DeFam.app.common.utils.AppManager;
-import Medium.DeFam.app.common.utils.DialogUitl;
-import Medium.DeFam.app.common.utils.LogUtils;
-import Medium.DeFam.app.common.utils.UserUtil;
-
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.net.ConnectException;
@@ -27,6 +20,13 @@ import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.net.UnknownServiceException;
+
+import Medium.DeFam.app.common.ActivityRouter;
+import Medium.DeFam.app.common.R;
+import Medium.DeFam.app.common.utils.AppManager;
+import Medium.DeFam.app.common.utils.DialogUitl;
+import Medium.DeFam.app.common.utils.LogUtils;
+import Medium.DeFam.app.common.utils.UserUtil;
 
 
 public abstract class TradeHttpCallback<T> implements Callback<T> {

@@ -4,13 +4,12 @@ package Medium.DeFam.app.common.utils;
 import android.graphics.Bitmap;
 import android.os.Environment;
 
-
-import Medium.DeFam.app.common.CommonAppContext;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import Medium.DeFam.app.common.CommonAppContext;
 
 public class FileUtilMy {
     private static FileUtilMy instance;

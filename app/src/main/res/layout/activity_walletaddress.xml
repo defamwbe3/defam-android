@@ -48,5 +48,6 @@
         android:textColor="@color/white"
         android:layout_marginVertical="@dimen/dp_18"
         android:background="@drawable/r_lan50"
-        android:text="新增地址"/>
+        android:text="新增地址"
+        android:visibility="gone"/>
 </LinearLayout>

@@ -9,7 +9,6 @@ import com.google.gson.reflect.TypeToken;
 import com.xuexiang.xupdate.entity.UpdateEntity;
 import com.xuexiang.xupdate.listener.IUpdateParseCallback;
 import com.xuexiang.xupdate.proxy.IUpdateParser;
-import com.xuexiang.xupdate.utils.UpdateUtils;
 
 import Medium.DeFam.app.bean.AppVerBean;
 import Medium.DeFam.app.common.http.JsonBean;

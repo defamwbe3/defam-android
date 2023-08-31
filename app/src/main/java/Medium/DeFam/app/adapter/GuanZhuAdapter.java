@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.FenSiBean;
 import Medium.DeFam.app.bean.GuanZhuBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;

@@ -69,7 +69,8 @@
             android:layout_marginRight="@dimen/dp_3"
             app:cardElevation="@dimen/dp_3"
             app:cardCornerRadius="@dimen/dp_12"
-            android:background="@color/white">
+            android:background="@color/white"
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -99,6 +99,7 @@ public class HttpUtil {
     public static final String APIORDERPUT = "/api/order";
     //我的碎片/藏宝图列表
     public static final String USERMAP = "/api/usermap";
+
     //配置
     public static final String CINFIG = "/api/config";
     //获取用户团队数据

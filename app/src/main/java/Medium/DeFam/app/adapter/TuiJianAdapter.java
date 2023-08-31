@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,19 +15,12 @@ import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.CommentBean;
 import Medium.DeFam.app.bean.WenZhangDetailBean;
-import Medium.DeFam.app.common.http.HttpClient;
-import Medium.DeFam.app.common.http.JsonBean;
-import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.AllUtils;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.utils.HttpUtil;
 
 public class TuiJianAdapter extends RecyclerView.Adapter<TuiJianAdapter.ViewHolder> {
     private final List<WenZhangDetailBean> dataList = new ArrayList<>();

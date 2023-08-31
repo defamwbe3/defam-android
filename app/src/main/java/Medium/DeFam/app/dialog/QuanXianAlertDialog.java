@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.Login;
 import Medium.DeFam.app.activity.Web;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;

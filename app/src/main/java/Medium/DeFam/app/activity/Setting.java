@@ -4,17 +4,11 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-
-import com.lzy.okgo.model.Response;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.common.ActivityRouter;

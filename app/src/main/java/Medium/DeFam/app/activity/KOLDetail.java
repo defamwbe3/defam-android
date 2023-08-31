@@ -12,14 +12,9 @@ import android.webkit.WebViewClient;
 import androidx.annotation.Nullable;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.GongGaoBean;
 import Medium.DeFam.app.bean.KOLBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
-import Medium.DeFam.app.common.http.HttpClient;
-import Medium.DeFam.app.common.http.JsonBean;
-import Medium.DeFam.app.common.http.TradeHttpCallback;
-import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.MyTextView;
 import butterknife.BindView;
 

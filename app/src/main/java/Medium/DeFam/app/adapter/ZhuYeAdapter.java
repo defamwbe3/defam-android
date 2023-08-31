@@ -21,7 +21,6 @@ import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.greenrobot.eventbus.EventBus;
-import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -30,12 +29,9 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.HuoDongDetail;
 import Medium.DeFam.app.activity.Photo;
-import Medium.DeFam.app.activity.Setting;
 import Medium.DeFam.app.bean.JiangLiBean;
 import Medium.DeFam.app.bean.WenZhangDetailBean;
-import Medium.DeFam.app.common.ActivityRouter;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.bean.MessageEvent;
 import Medium.DeFam.app.common.http.HttpClient;

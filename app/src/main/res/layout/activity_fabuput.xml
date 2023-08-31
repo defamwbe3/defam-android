@@ -24,7 +24,7 @@
         android:inputType="textMultiLine"
         android:gravity="top"
         android:padding="@dimen/dp_12"
-        android:maxLength="100"
+        android:maxLength="300"
         android:background="@android:color/transparent"/>
 
     <Medium.DeFam.app.common.widget.NoScrollGridView

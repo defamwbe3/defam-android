@@ -2,13 +2,13 @@ package Medium.DeFam.app.common.http;
 
 import com.lzy.okgo.utils.IOUtils;
 import com.lzy.okgo.utils.OkLogger;
-import Medium.DeFam.app.common.utils.LogUtils;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+import Medium.DeFam.app.common.utils.LogUtils;
 import okhttp3.Connection;
 import okhttp3.Headers;
 import okhttp3.Interceptor;

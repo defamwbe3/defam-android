@@ -157,7 +157,7 @@
             android:paddingHorizontal="@dimen/dp_10"
             android:background="@android:color/transparent"
             android:inputType="text"
-            android:hint="请输入Polygon地址"/>
+            android:hint="请输入BSC地址"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
-import Medium.DeFam.app.common.CommonAppContext;
-
 import java.util.Map;
+
+import Medium.DeFam.app.common.CommonAppContext;
 
 /**
  * Created by zmh on 2018/9/17.

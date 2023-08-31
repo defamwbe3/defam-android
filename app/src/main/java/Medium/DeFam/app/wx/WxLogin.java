@@ -12,7 +12,6 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import Medium.DeFam.app.AppContext;
 import Medium.DeFam.app.wx.interfaces.WxLoginResultListener;
-import Medium.DeFam.app.wxapi.WXEntryActivity;
 
 public class WxLogin {
     //微信登录标示

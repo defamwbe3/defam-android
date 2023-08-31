@@ -14,9 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.WelcomeGuideAdapter;

@@ -9,6 +9,15 @@ import android.text.TextUtils;
 import com.hjq.toast.Toaster;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.impl.LoadingPopupView;
+import com.ypx.imagepicker.ImagePicker;
+import com.ypx.imagepicker.bean.ImageItem;
+import com.ypx.imagepicker.bean.MimeType;
+import com.ypx.imagepicker.bean.SelectMode;
+import com.ypx.imagepicker.bean.selectconfig.CropConfig;
+import com.ypx.imagepicker.data.OnImagePickCompleteListener;
+
+import java.io.File;
+import java.util.ArrayList;
 
 import Medium.DeFam.app.common.bean.UploadBean;
 import Medium.DeFam.app.common.http.CommonHttpConsts;
@@ -17,17 +26,6 @@ import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.interfaces.OnUpdateImgListener;
 import Medium.DeFam.app.common.widget.WeChatPresenter;
-import com.ypx.imagepicker.ImagePicker;
-import com.ypx.imagepicker.bean.ImageItem;
-import com.ypx.imagepicker.bean.MimeType;
-import com.ypx.imagepicker.bean.SelectMode;
-import com.ypx.imagepicker.bean.selectconfig.CropConfig;
-import com.ypx.imagepicker.data.OnImagePickCompleteListener;
-
-
-import java.io.File;
-import java.util.ArrayList;
-
 import top.zibin.luban.CompressionPredicate;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;

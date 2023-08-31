@@ -1,5 +1,6 @@
 package Medium.DeFam.app.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Build;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.hjq.toast.Toaster;
+import com.lzy.okgo.model.Response;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
@@ -21,16 +24,20 @@ import com.youth.banner.listener.OnBannerListener;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.JiFenDetailBean;
+import Medium.DeFam.app.bean.WalletAddressBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.GlideUtil;
+import Medium.DeFam.app.dialog.AllDialog;
 import Medium.DeFam.app.dialog.JiFenDialogFragment;
 import Medium.DeFam.app.utils.HttpUtil;
 import butterknife.BindView;
@@ -50,6 +57,8 @@ public class JiFenDetail extends BaseActivity {
     @BindView(R.id.web)
     WebView web;
     JiFenDetailBean alldata;
+    private Activity mContext;
+
     private final String HTML_STYLE = "<style type=\"text/css\">* {font-size:16px}" +
             "img,iframe,video,table,div {height:auto; max-width:100%; width:100% !important; word-break:break-all;} </style>";//bak:
 
@@ -65,6 +74,7 @@ public class JiFenDetail extends BaseActivity {
 
     @Override
     protected void initView(@Nullable Bundle savedInstanceState, @Nullable Bundle bundle) {
+        mContext = this;
         WebSettings settings = web.getSettings();
         settings.setJavaScriptEnabled(true); // 设置支持javascript脚本
         settings.setAllowFileAccess(true); // 允许访问文件
@@ -125,12 +135,8 @@ public class JiFenDetail extends BaseActivity {
             if(null==alldata){
                 return;
             }
-
-            JiFenDialogFragment jiFenDialogFragment = new JiFenDialogFragment();
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("data", alldata);
-            jiFenDialogFragment.setArguments(bundle);
-            jiFenDialogFragment.show(getSupportFragmentManager(), "xinxi", true);
+            //判断有没绑定钱包地址
+            getWalletData();
         }
     }
 
@@ -145,6 +151,44 @@ public class JiFenDetail extends BaseActivity {
                 setUI();
             }
 
+        });
+    }
+
+    private void getWalletData() {
+        showProgress("加载中...");
+        Map<String, String> map = new HashMap<>();
+        map.put("page", "1");
+        HttpClient.getInstance().gets(HttpUtil.APIWALLETADDRESS, map, new TradeHttpCallback<JsonBean<WalletAddressBean>>() {
+            @Override
+            public void onSuccess(JsonBean<WalletAddressBean> data) {
+                closeProgress();
+                if (null == data || null == data.getData() || data.getData().getData()==null || data.getData().getData().size()==0) {
+                    AllDialog payDialog = new AllDialog(mContext, "温馨提示", "未绑定钱包地址，请绑定");
+                    payDialog.seOkBtnText("去绑定");
+                    payDialog.setItemListener(new AllDialog.OnNoticeListener() {
+                        @Override
+                        public void setNoticeListener(int id, int positionDialog, String data) {
+                            if (0 == id) {
+                                Intent intent = new Intent(mContext, WalletAddressAdd.class);
+                                startActivityForResult(intent, Constants.TYPE_1);
+                            }
+                        }
+                    });
+                    payDialog.show();
+                }else{
+                    JiFenDialogFragment jiFenDialogFragment = new JiFenDialogFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("data", alldata);
+                    jiFenDialogFragment.setArguments(bundle);
+                    jiFenDialogFragment.show(getSupportFragmentManager(), "xinxi", true);
+                }
+            }
+
+            @Override
+            public void onError(Response<JsonBean<WalletAddressBean>> response) {
+                closeProgress();
+                Toaster.show("加载失败");
+            }
         });
     }
 

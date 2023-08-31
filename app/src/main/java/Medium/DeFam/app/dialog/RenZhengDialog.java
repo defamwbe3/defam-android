@@ -11,7 +11,6 @@ import android.view.Window;
 import androidx.annotation.NonNull;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.HuoDongDetail;
 import Medium.DeFam.app.activity.RenZheng;
 
 

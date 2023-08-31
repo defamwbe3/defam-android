@@ -22,13 +22,11 @@ import java.util.Map;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.CommentBean;
-import Medium.DeFam.app.bean.FenSiBean;
 import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.utils.AllUtils;
 import Medium.DeFam.app.common.utils.GlideUtil;
-import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.utils.HttpUtil;
 
 

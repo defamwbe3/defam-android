@@ -1,8 +1,6 @@
 package Medium.DeFam.app.activity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -11,19 +9,15 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-
 import com.umeng.commonsdk.UMConfigure;
 
 import Medium.DeFam.app.R;
+import Medium.DeFam.app.common.ActivityRouter;
 import Medium.DeFam.app.common.Constants;
+import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.common.utils.SpUtil;
 import Medium.DeFam.app.dialog.QuanXianAlertDialog;
 import Medium.DeFam.app.dialog.QuanXianNoAlertDialog;
-import Medium.DeFam.app.view.CustomView;
-
-import Medium.DeFam.app.common.ActivityRouter;
-import Medium.DeFam.app.common.base.BaseActivity;
-
 import butterknife.BindView;
 
 /**

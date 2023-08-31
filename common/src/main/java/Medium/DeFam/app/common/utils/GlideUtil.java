@@ -22,12 +22,10 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 
+import java.io.File;
+
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.R;
-
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class GlideUtil {
     /**

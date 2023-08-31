@@ -20,8 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 
-import org.json.JSONObject;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,7 +27,6 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.HuoDongDetail;
 import Medium.DeFam.app.activity.Photo;
 import Medium.DeFam.app.bean.JiangLiBean;
 import Medium.DeFam.app.bean.ShouCangFaTieBean;

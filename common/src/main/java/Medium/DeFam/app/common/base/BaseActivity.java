@@ -23,12 +23,14 @@ import Medium.DeFam.app.common.titlebar.CommonTitleBar;
 import Medium.DeFam.app.common.utils.AppManager;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.common.widget.LoadingController;
+import Medium.DeFam.app.common.widget.ProgressDialog;
 import butterknife.ButterKnife;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected CommonTitleBar mTitleBar;
     protected LoadingController loadingController;
+    private ProgressDialog progress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -180,6 +182,36 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void onMessageEvent(MessageEvent event) {
         if (null != event) {
             onEventComing(event);
+        }
+    }
+
+    public ProgressDialog showProgress(String msg) {
+        if (progress == null) {
+            progress = new ProgressDialog(this);
+        }
+        progress.setMsg(msg);
+        progress.show();
+        return progress;
+    }
+
+    public ProgressDialog showProgressCancelable(String msg) {
+        if (progress == null) {
+            progress = new ProgressDialog(this, msg);
+        }
+        progress.setCancelable(true);
+        progress.show();
+        return progress;
+    }
+
+    /**
+     * 关闭等待框
+     */
+    public void closeProgress() {
+        try {
+            if (progress != null) {
+                progress.dismiss();
+            }
+        } catch (Exception e) {
         }
     }
 

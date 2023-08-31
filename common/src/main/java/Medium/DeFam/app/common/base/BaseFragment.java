@@ -10,16 +10,14 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-import Medium.DeFam.app.common.bean.MessageEvent;
-import Medium.DeFam.app.common.interfaces.LoadingInterface;
-import Medium.DeFam.app.common.interfaces.PermissionListener;
-import Medium.DeFam.app.common.utils.UserUtil;
-import Medium.DeFam.app.common.widget.LoadingController;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import Medium.DeFam.app.common.bean.MessageEvent;
+import Medium.DeFam.app.common.interfaces.LoadingInterface;
+import Medium.DeFam.app.common.utils.UserUtil;
+import Medium.DeFam.app.common.widget.LoadingController;
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {

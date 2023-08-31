@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.bean.KOLBean;
-import Medium.DeFam.app.bean.WenZhangDetailBean;
 
 
 public class ExpandKOLView extends LinearLayout {

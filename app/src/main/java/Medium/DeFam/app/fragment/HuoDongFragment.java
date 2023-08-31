@@ -12,9 +12,9 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.hjq.toast.Toaster;
 import com.youth.banner.Banner;
 import com.youth.banner.indicator.CircleIndicator;
-import com.youth.banner.transformer.ZoomOutPageTransformer;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -31,16 +31,10 @@ import java.util.List;
 import java.util.Map;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.GuanDianPut;
-import Medium.DeFam.app.activity.JiFenJiLuDetail;
-import Medium.DeFam.app.activity.Login;
 import Medium.DeFam.app.activity.RenZheng;
-import Medium.DeFam.app.activity.Web;
 import Medium.DeFam.app.adapter.ImageAdapter;
 import Medium.DeFam.app.adapter.ViewPagerAdapter;
 import Medium.DeFam.app.bean.BannerBean;
-import Medium.DeFam.app.bean.InfoBean;
-import Medium.DeFam.app.bean.JiFenOkBean;
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.base.BaseFragment;
 import Medium.DeFam.app.common.bean.MessageEvent;
@@ -48,10 +42,8 @@ import Medium.DeFam.app.common.http.HttpClient;
 import Medium.DeFam.app.common.http.JsonBean;
 import Medium.DeFam.app.common.http.TradeHttpCallback;
 import Medium.DeFam.app.common.them.Eyes;
-import Medium.DeFam.app.common.utils.GlideUtil;
 import Medium.DeFam.app.common.utils.UserUtil;
 import Medium.DeFam.app.dialog.RenZhengDialog;
-import Medium.DeFam.app.dialog.YuYueDialog;
 import Medium.DeFam.app.utils.HttpUtil;
 import Medium.DeFam.app.view.ScaleTransitionPagerTitleView;
 import butterknife.BindView;
@@ -225,6 +217,10 @@ public class HuoDongFragment extends BaseFragment {
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.renzheng) {
+            if(!UserUtil.isLogin()){
+                Toaster.show("请先登录");
+                return;
+            }
             if("1".equals(UserUtil.getUserBean().getIs_enterprise())){
                 Intent intent = new Intent(getActivity(), RenZheng.class);
                 startActivity(intent);

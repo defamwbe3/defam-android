@@ -17,7 +17,6 @@ import java.util.List;
 import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.CommentAdapter;
 import Medium.DeFam.app.common.base.BaseActivity;
-import Medium.DeFam.app.common.widget.NoScrollListView;
 import Medium.DeFam.app.dialog.FenXiangDialogFragment;
 import Medium.DeFam.app.dialog.PingLunDialogFragment;
 import butterknife.BindView;

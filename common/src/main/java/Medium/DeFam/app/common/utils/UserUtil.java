@@ -3,11 +3,12 @@ package Medium.DeFam.app.common.utils;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
+
 import Medium.DeFam.app.common.Constants;
 import Medium.DeFam.app.common.bean.MessageEvent;
 import Medium.DeFam.app.common.bean.UserBean;
-
-import org.greenrobot.eventbus.EventBus;
 
 public class UserUtil {
 

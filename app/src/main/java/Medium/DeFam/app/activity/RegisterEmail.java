@@ -174,7 +174,7 @@ public class RegisterEmail extends BaseActivity {
                 return;
             }
             if (TextUtils.isEmpty(polygin.getText().toString())) {
-                Toaster.show("请输入Polygon地址");
+                Toaster.show("请输入BSC地址");
                 return;
             }
             Map<String, String> map = new HashMap<>();

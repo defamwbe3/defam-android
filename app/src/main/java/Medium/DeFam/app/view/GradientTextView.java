@@ -10,13 +10,12 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-
 import androidx.appcompat.widget.AppCompatTextView;
-
-import Medium.DeFam.app.R;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
+
+import Medium.DeFam.app.R;
 
 /**
  * Created by Allen on 2017/3/16.

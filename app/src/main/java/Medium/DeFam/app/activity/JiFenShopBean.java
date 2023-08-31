@@ -1,6 +1,5 @@
 package Medium.DeFam.app.activity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import Medium.DeFam.app.bean.JiFenDetailBean;

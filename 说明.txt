@@ -1,3 +1,0 @@
-1、接口文档地址：https://console-docs.apipost.cn/preview/06b5f07b951c7340/7d276e72493d6f49
-
-2、UI界面地址：https://www.figma.com/file/305pEk0cccuociFxVSuKmm/Defam?type=design&node-id=214-356&t=wllw8gqFC0GpVv5d-0

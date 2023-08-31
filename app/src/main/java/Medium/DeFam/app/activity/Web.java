@@ -1,12 +1,12 @@
 package Medium.DeFam.app.activity;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -137,7 +137,7 @@ public class Web extends BaseActivity {
         IAgentWebSettings webSettings = new AgentWebSettingsImpl().toSetting(new WebView(this));
         webSettings.getWebSettings().setJavaScriptEnabled(true);// 启用支持JavaScript
         webSettings.getWebSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webSettings.getWebSettings().setUseWideViewPort(false);// 设置此属性，可任意比例缩放
+        webSettings.getWebSettings().setUseWideViewPort(true);// 设置此属性，可任意比例缩放
         webSettings.getWebSettings().setAllowFileAccess(true);// 设置可以访问文件
         webSettings.getWebSettings().setBuiltInZoomControls(false);// 设置支持缩放
         webSettings.getWebSettings().setBlockNetworkImage(false);// 加载需要显示的网页
@@ -146,6 +146,11 @@ public class Web extends BaseActivity {
         webSettings.getWebSettings().setLoadWithOverviewMode(true);
         webSettings.getWebSettings().setAppCacheEnabled(false);// 使用缓存
         webSettings.getWebSettings().setDefaultTextEncodingName("utf-8");
+        webSettings.getWebSettings().setSaveFormData(false);
+        //允许其加载混合网络协议内容
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webSettings.getWebSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
         return webSettings;
     }
 
@@ -204,8 +209,17 @@ public class Web extends BaseActivity {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // TODO Auto-generated method stub
-            view.loadUrl(url);
-            return true;
+            try{
+                if (url.startsWith("http:") || url.startsWith("https:")){
+                    view.loadUrl(url);
+                }else{
+                    Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                    startActivity(intent);
+                }
+                return true;
+            }catch (Exception e){
+                return false;
+            }
         }
 
         @Override

@@ -3,10 +3,12 @@ package Medium.DeFam.app.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,12 +26,15 @@ public class AllDialog extends Dialog {
     TextView title;
     @BindView(R.id.desc)
     TextView desc;
+    @BindView(R.id.ok)
+    Button okBtn;
 
     public interface OnNoticeListener {
         void setNoticeListener(int id, int position, String data);
     }
 
     private String mydesc, mytitle;
+    private String okStr;
 
     public void setItemListener(OnNoticeListener listener) {
         mItemSelectListener = listener;
@@ -63,6 +68,16 @@ public class AllDialog extends Dialog {
     private void initData() {
         title.setText(mytitle);
         desc.setText(mydesc);
+        if(!TextUtils.isEmpty(okStr)){
+            okBtn.setText(okStr);
+        }
+    }
+
+    public void seOkBtnText(String str){
+        this.okStr = str;
+        if(okBtn!=null && !TextUtils.isEmpty(okStr)){
+            okBtn.setText(okStr);
+        }
     }
 
     @OnClick({R.id.quxiao, R.id.ok})

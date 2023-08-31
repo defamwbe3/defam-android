@@ -1,7 +1,6 @@
 package Medium.DeFam.app.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
@@ -27,17 +26,10 @@ import Medium.DeFam.app.R;
 import Medium.DeFam.app.adapter.ViewPagerAdapter;
 import Medium.DeFam.app.common.base.BaseActivity;
 import Medium.DeFam.app.fragment.FaTieShouCangFragment;
-import Medium.DeFam.app.fragment.HomeItemFragment;
-import Medium.DeFam.app.fragment.HomeItemHuoDongFragment;
-import Medium.DeFam.app.fragment.HomeItemKolFragment;
-import Medium.DeFam.app.fragment.HuoDongFragment;
 import Medium.DeFam.app.fragment.HuoDongShouCangFragment;
-import Medium.DeFam.app.fragment.QuanZiFragment;
-import Medium.DeFam.app.fragment.ZiXunFragment;
 import Medium.DeFam.app.fragment.ZiXunShouCangFragment;
 import Medium.DeFam.app.view.ScaleTransitionPagerTitleView;
 import butterknife.BindView;
-import butterknife.OnClick;
 import me.jessyan.autosize.utils.AutoSizeUtils;
 
 

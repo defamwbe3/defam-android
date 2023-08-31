@@ -2,7 +2,6 @@ package Medium.DeFam.app.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.activity.RenZheng;
 
 public class JiFenDialog extends Dialog {
     private Context mContext;

@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

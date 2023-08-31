@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Medium.DeFam.app.R;
-import Medium.DeFam.app.bean.HuoDongBean;
 import Medium.DeFam.app.bean.HuoDongDetailBean;
 import Medium.DeFam.app.common.utils.GlideUtil;
 
